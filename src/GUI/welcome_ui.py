@@ -16,9 +16,9 @@ from PySide6.QtGui import (QBrush, QColor, QConicalGradient, QCursor,
     QImage, QKeySequence, QLinearGradient, QPainter,
     QPalette, QPixmap, QRadialGradient, QTransform)
 from PySide6.QtWidgets import (QApplication, QFrame, QGridLayout, QHBoxLayout,
-    QLabel, QMainWindow, QPushButton, QSizePolicy,
-    QSpacerItem, QSpinBox, QStackedWidget, QVBoxLayout,
-    QWidget)
+    QLabel, QLineEdit, QMainWindow, QPushButton,
+    QSizePolicy, QSpacerItem, QSpinBox, QStackedWidget,
+    QVBoxLayout, QWidget)
 
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
@@ -240,14 +240,26 @@ class Ui_MainWindow(object):
         self.gridLayout_2.setSpacing(0)
         self.gridLayout_2.setObjectName(u"gridLayout_2")
         self.gridLayout_2.setContentsMargins(11, -1, 11, -1)
+        self.stepsLabel = QLabel(self.inputCard)
+        self.stepsLabel.setObjectName(u"stepsLabel")
+        sizePolicy1.setHeightForWidth(self.stepsLabel.sizePolicy().hasHeightForWidth())
+        self.stepsLabel.setSizePolicy(sizePolicy1)
+        self.stepsLabel.setMinimumSize(QSize(0, 50))
+        font4 = QFont()
+        font4.setPointSize(16)
+        font4.setBold(False)
+        self.stepsLabel.setFont(font4)
+        self.stepsLabel.setStyleSheet(u"color: #212121;\n"
+"")
+        self.stepsLabel.setAlignment(Qt.AlignmentFlag.AlignJustify|Qt.AlignmentFlag.AlignVCenter)
+
+        self.gridLayout_2.addWidget(self.stepsLabel, 4, 0, 1, 1)
+
         self.beginnigIntLabel = QLabel(self.inputCard)
         self.beginnigIntLabel.setObjectName(u"beginnigIntLabel")
         sizePolicy1.setHeightForWidth(self.beginnigIntLabel.sizePolicy().hasHeightForWidth())
         self.beginnigIntLabel.setSizePolicy(sizePolicy1)
         self.beginnigIntLabel.setMinimumSize(QSize(0, 50))
-        font4 = QFont()
-        font4.setPointSize(16)
-        font4.setBold(False)
         self.beginnigIntLabel.setFont(font4)
         self.beginnigIntLabel.setStyleSheet(u"color: #212121;\n"
 "")
@@ -255,69 +267,55 @@ class Ui_MainWindow(object):
 
         self.gridLayout_2.addWidget(self.beginnigIntLabel, 2, 0, 1, 1)
 
-        self.stepsSpinBox = QSpinBox(self.inputCard)
-        self.stepsSpinBox.setObjectName(u"stepsSpinBox")
-        self.stepsSpinBox.setFont(font4)
-        self.stepsSpinBox.setMinimum(10)
-        self.stepsSpinBox.setMaximum(35)
-
-        self.gridLayout_2.addWidget(self.stepsSpinBox, 4, 1, 1, 1)
-
-        self.beginnigIntSpinBox = QSpinBox(self.inputCard)
-        self.beginnigIntSpinBox.setObjectName(u"beginnigIntSpinBox")
-        self.beginnigIntSpinBox.setFont(font4)
-        self.beginnigIntSpinBox.setMinimum(-10)
-        self.beginnigIntSpinBox.setMaximum(0)
-
-        self.gridLayout_2.addWidget(self.beginnigIntSpinBox, 2, 1, 1, 1)
-
         self.endIntSpinBox = QSpinBox(self.inputCard)
         self.endIntSpinBox.setObjectName(u"endIntSpinBox")
         self.endIntSpinBox.setFont(font4)
+        self.endIntSpinBox.setStyleSheet(u"QSpinBox, QDoubleSpinBox {\n"
+"    background-color: #FFFFFF;\n"
+"    border: 1px solid #CCCCCC;\n"
+"    border-radius: 4px;\n"
+"    color: #000000;\n"
+"    padding: 5px;\n"
+"}\n"
+"\n"
+"QSpinBox:focus, QDoubleSpinBox:focus {\n"
+"    border: 1px solid rgb(38, 162, 105);\n"
+"}")
         self.endIntSpinBox.setMinimum(1)
         self.endIntSpinBox.setMaximum(10)
 
         self.gridLayout_2.addWidget(self.endIntSpinBox, 3, 1, 1, 1)
 
-        self.endIntLabel = QLabel(self.inputCard)
-        self.endIntLabel.setObjectName(u"endIntLabel")
-        sizePolicy1.setHeightForWidth(self.endIntLabel.sizePolicy().hasHeightForWidth())
-        self.endIntLabel.setSizePolicy(sizePolicy1)
-        self.endIntLabel.setMinimumSize(QSize(0, 50))
-        self.endIntLabel.setFont(font4)
-        self.endIntLabel.setStyleSheet(u"color: #212121;\n"
-"")
-        self.endIntLabel.setAlignment(Qt.AlignmentFlag.AlignJustify|Qt.AlignmentFlag.AlignVCenter)
-
-        self.gridLayout_2.addWidget(self.endIntLabel, 3, 0, 1, 1)
-
-        self.coefSpinBox = QSpinBox(self.inputCard)
-        self.coefSpinBox.setObjectName(u"coefSpinBox")
-        self.coefSpinBox.setFont(font4)
-        self.coefSpinBox.setMinimum(-5)
-        self.coefSpinBox.setMaximum(5)
-
-        self.gridLayout_2.addWidget(self.coefSpinBox, 1, 1, 1, 1)
-
         self.degSpinBox = QSpinBox(self.inputCard)
         self.degSpinBox.setObjectName(u"degSpinBox")
         self.degSpinBox.setFont(font4)
+        self.degSpinBox.setStyleSheet(u"QSpinBox, QDoubleSpinBox {\n"
+"    background-color: #FFFFFF;\n"
+"    border: 1px solid #CCCCCC;\n"
+"    border-radius: 4px;\n"
+"    color: #000000;\n"
+"    padding: 5px;\n"
+"}\n"
+"\n"
+"QSpinBox:focus, QDoubleSpinBox:focus {\n"
+"    border: 1px solid rgb(38, 162, 105);\n"
+"}")
         self.degSpinBox.setMinimum(1)
         self.degSpinBox.setMaximum(8)
 
         self.gridLayout_2.addWidget(self.degSpinBox, 0, 1, 1, 1)
 
-        self.stepsLabel = QLabel(self.inputCard)
-        self.stepsLabel.setObjectName(u"stepsLabel")
-        sizePolicy1.setHeightForWidth(self.stepsLabel.sizePolicy().hasHeightForWidth())
-        self.stepsLabel.setSizePolicy(sizePolicy1)
-        self.stepsLabel.setMinimumSize(QSize(0, 50))
-        self.stepsLabel.setFont(font4)
-        self.stepsLabel.setStyleSheet(u"color: #212121;\n"
+        self.coefLabel = QLabel(self.inputCard)
+        self.coefLabel.setObjectName(u"coefLabel")
+        sizePolicy1.setHeightForWidth(self.coefLabel.sizePolicy().hasHeightForWidth())
+        self.coefLabel.setSizePolicy(sizePolicy1)
+        self.coefLabel.setMinimumSize(QSize(0, 50))
+        self.coefLabel.setFont(font4)
+        self.coefLabel.setStyleSheet(u"color: #212121;\n"
 "")
-        self.stepsLabel.setAlignment(Qt.AlignmentFlag.AlignJustify|Qt.AlignmentFlag.AlignVCenter)
+        self.coefLabel.setAlignment(Qt.AlignmentFlag.AlignJustify|Qt.AlignmentFlag.AlignVCenter)
 
-        self.gridLayout_2.addWidget(self.stepsLabel, 4, 0, 1, 1)
+        self.gridLayout_2.addWidget(self.coefLabel, 1, 0, 1, 1)
 
         self.degLabel_ = QLabel(self.inputCard)
         self.degLabel_.setObjectName(u"degLabel_")
@@ -331,17 +329,78 @@ class Ui_MainWindow(object):
 
         self.gridLayout_2.addWidget(self.degLabel_, 0, 0, 1, 1)
 
-        self.coefLabel = QLabel(self.inputCard)
-        self.coefLabel.setObjectName(u"coefLabel")
-        sizePolicy1.setHeightForWidth(self.coefLabel.sizePolicy().hasHeightForWidth())
-        self.coefLabel.setSizePolicy(sizePolicy1)
-        self.coefLabel.setMinimumSize(QSize(0, 50))
-        self.coefLabel.setFont(font4)
-        self.coefLabel.setStyleSheet(u"color: #212121;\n"
-"")
-        self.coefLabel.setAlignment(Qt.AlignmentFlag.AlignJustify|Qt.AlignmentFlag.AlignVCenter)
+        self.stepsSpinBox = QSpinBox(self.inputCard)
+        self.stepsSpinBox.setObjectName(u"stepsSpinBox")
+        self.stepsSpinBox.setFont(font4)
+        self.stepsSpinBox.setStyleSheet(u"QSpinBox, QDoubleSpinBox {\n"
+"    background-color: #FFFFFF;\n"
+"    border: 1px solid #CCCCCC;\n"
+"    border-radius: 4px;\n"
+"    color: #000000;\n"
+"    padding: 5px;\n"
+"}\n"
+"\n"
+"QSpinBox:focus, QDoubleSpinBox:focus {\n"
+"    border: 1px solid rgb(38, 162, 105);\n"
+"}")
+        self.stepsSpinBox.setMinimum(10)
+        self.stepsSpinBox.setMaximum(35)
 
-        self.gridLayout_2.addWidget(self.coefLabel, 1, 0, 1, 1)
+        self.gridLayout_2.addWidget(self.stepsSpinBox, 4, 1, 1, 1)
+
+        self.beginnigIntSpinBox = QSpinBox(self.inputCard)
+        self.beginnigIntSpinBox.setObjectName(u"beginnigIntSpinBox")
+        self.beginnigIntSpinBox.setFont(font4)
+        self.beginnigIntSpinBox.setStyleSheet(u"QSpinBox, QDoubleSpinBox {\n"
+"    background-color: #FFFFFF;\n"
+"    border: 1px solid #CCCCCC;\n"
+"    border-radius: 4px;\n"
+"    color: #000000;\n"
+"    padding: 5px;\n"
+"}\n"
+"\n"
+"QSpinBox:focus, QDoubleSpinBox:focus {\n"
+"    border: 1px solid rgb(38, 162, 105);\n"
+"}")
+        self.beginnigIntSpinBox.setMinimum(-10)
+        self.beginnigIntSpinBox.setMaximum(0)
+
+        self.gridLayout_2.addWidget(self.beginnigIntSpinBox, 2, 1, 1, 1)
+
+        self.coefLineEdit = QLineEdit(self.inputCard)
+        self.coefLineEdit.setObjectName(u"coefLineEdit")
+        sizePolicy5 = QSizePolicy(QSizePolicy.Policy.Fixed, QSizePolicy.Policy.Fixed)
+        sizePolicy5.setHorizontalStretch(40)
+        sizePolicy5.setVerticalStretch(0)
+        sizePolicy5.setHeightForWidth(self.coefLineEdit.sizePolicy().hasHeightForWidth())
+        self.coefLineEdit.setSizePolicy(sizePolicy5)
+        self.coefLineEdit.setMinimumSize(QSize(500, 26))
+        self.coefLineEdit.setStyleSheet(u"QLineEdit {\n"
+"    background-color: #FFFFFF;    \n"
+"    border: 1px solid #DCDCDC; \n"
+"    border-radius: 6px;\n"
+"    color: #212121;\n"
+"    padding: 6px 10px;\n"
+"    font-size: 11pt;\n"
+"}\n"
+"\n"
+"QLineEdit:focus {\n"
+"    border: 1px solid rgb(38, 162, 105);\n"
+"}")
+
+        self.gridLayout_2.addWidget(self.coefLineEdit, 1, 1, 1, 1)
+
+        self.endIntLabel = QLabel(self.inputCard)
+        self.endIntLabel.setObjectName(u"endIntLabel")
+        sizePolicy1.setHeightForWidth(self.endIntLabel.sizePolicy().hasHeightForWidth())
+        self.endIntLabel.setSizePolicy(sizePolicy1)
+        self.endIntLabel.setMinimumSize(QSize(0, 50))
+        self.endIntLabel.setFont(font4)
+        self.endIntLabel.setStyleSheet(u"color: #212121;\n"
+"")
+        self.endIntLabel.setAlignment(Qt.AlignmentFlag.AlignJustify|Qt.AlignmentFlag.AlignVCenter)
+
+        self.gridLayout_2.addWidget(self.endIntLabel, 3, 0, 1, 1)
 
 
         self.verticalLayout_2.addLayout(self.gridLayout_2)
@@ -445,11 +504,12 @@ class Ui_MainWindow(object):
         self.loadButton.setText(QCoreApplication.translate("MainWindow", u"\u0417\u0430\u0433\u0440\u0443\u0437\u0438\u0442\u044c \u0434\u0430\u043d\u043d\u044b\u0435 \u0438\u0437 \u0444\u0430\u0439\u043b\u0430", None))
         self.aboutButton.setText(QCoreApplication.translate("MainWindow", u"\u041e \u043f\u0440\u043e\u0433\u0440\u0430\u043c\u043c\u0435", None))
         self.descriptionParamLabel.setText(QCoreApplication.translate("MainWindow", u"\u0412\u0432\u0435\u0434\u0438\u0442\u0435 \u043f\u0430\u0440\u0430\u043c\u0435\u0442\u0440\u044b \u0437\u0430\u0434\u0430\u0447\u0438:", None))
-        self.beginnigIntLabel.setText(QCoreApplication.translate("MainWindow", u"\u041d\u0430\u0447\u0430\u043b\u043e \u0438\u043d\u0442\u0435\u0440\u0432\u0430\u043b\u0430:", None))
-        self.endIntLabel.setText(QCoreApplication.translate("MainWindow", u"\u041a\u043e\u043d\u0435\u0446 \u0438\u043d\u0442\u0435\u0440\u0432\u0430\u043b\u0430:", None))
         self.stepsLabel.setText(QCoreApplication.translate("MainWindow", u"\u041a\u043e\u043b\u0438\u0447\u0435\u0441\u0442\u0432\u043e \u0441\u0442\u0443\u043f\u0435\u043d\u0435\u0439:", None))
-        self.degLabel_.setText(QCoreApplication.translate("MainWindow", u"\u0421\u0442\u0435\u043f\u0435\u043d\u044c \u043f\u043e\u043b\u0438\u043d\u043e\u043c\u0430:", None))
+        self.beginnigIntLabel.setText(QCoreApplication.translate("MainWindow", u"\u041d\u0430\u0447\u0430\u043b\u043e \u0438\u043d\u0442\u0435\u0440\u0432\u0430\u043b\u0430:", None))
         self.coefLabel.setText(QCoreApplication.translate("MainWindow", u"\u041a\u043e\u044d\u0444\u0444\u0438\u0446\u0438\u0435\u043d\u0442\u044b:", None))
+        self.degLabel_.setText(QCoreApplication.translate("MainWindow", u"\u0421\u0442\u0435\u043f\u0435\u043d\u044c \u043f\u043e\u043b\u0438\u043d\u043e\u043c\u0430:", None))
+        self.coefLineEdit.setText("")
+        self.endIntLabel.setText(QCoreApplication.translate("MainWindow", u"\u041a\u043e\u043d\u0435\u0446 \u0438\u043d\u0442\u0435\u0440\u0432\u0430\u043b\u0430:", None))
         self.backButton_1.setText(QCoreApplication.translate("MainWindow", u"\u041d\u0430\u0437\u0430\u0434", None))
         self.nextButton_1.setText(QCoreApplication.translate("MainWindow", u"\u0412\u043f\u0435\u0440\u0435\u0434", None))
     # retranslateUi

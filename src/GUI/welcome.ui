@@ -458,6 +458,38 @@ QPushButton:pressed {
                <property name="spacing">
                 <number>0</number>
                </property>
+               <item row="4" column="0">
+                <widget class="QLabel" name="stepsLabel">
+                 <property name="sizePolicy">
+                  <sizepolicy hsizetype="Preferred" vsizetype="Maximum">
+                   <horstretch>0</horstretch>
+                   <verstretch>0</verstretch>
+                  </sizepolicy>
+                 </property>
+                 <property name="minimumSize">
+                  <size>
+                   <width>0</width>
+                   <height>50</height>
+                  </size>
+                 </property>
+                 <property name="font">
+                  <font>
+                   <pointsize>16</pointsize>
+                   <bold>false</bold>
+                  </font>
+                 </property>
+                 <property name="styleSheet">
+                  <string notr="true">color: #212121;
+</string>
+                 </property>
+                 <property name="text">
+                  <string>Количество ступеней:</string>
+                 </property>
+                 <property name="alignment">
+                  <set>Qt::AlignmentFlag::AlignJustify|Qt::AlignmentFlag::AlignVCenter</set>
+                 </property>
+                </widget>
+               </item>
                <item row="2" column="0">
                 <widget class="QLabel" name="beginnigIntLabel">
                  <property name="sizePolicy">
@@ -490,38 +522,6 @@ QPushButton:pressed {
                  </property>
                 </widget>
                </item>
-               <item row="4" column="1">
-                <widget class="QSpinBox" name="stepsSpinBox">
-                 <property name="font">
-                  <font>
-                   <pointsize>16</pointsize>
-                   <bold>false</bold>
-                  </font>
-                 </property>
-                 <property name="minimum">
-                  <number>10</number>
-                 </property>
-                 <property name="maximum">
-                  <number>35</number>
-                 </property>
-                </widget>
-               </item>
-               <item row="2" column="1">
-                <widget class="QSpinBox" name="beginnigIntSpinBox">
-                 <property name="font">
-                  <font>
-                   <pointsize>16</pointsize>
-                   <bold>false</bold>
-                  </font>
-                 </property>
-                 <property name="minimum">
-                  <number>-10</number>
-                 </property>
-                 <property name="maximum">
-                  <number>0</number>
-                 </property>
-                </widget>
-               </item>
                <item row="3" column="1">
                 <widget class="QSpinBox" name="endIntSpinBox">
                  <property name="font">
@@ -530,59 +530,24 @@ QPushButton:pressed {
                    <bold>false</bold>
                   </font>
                  </property>
+                 <property name="styleSheet">
+                  <string notr="true">QSpinBox, QDoubleSpinBox {
+    background-color: #FFFFFF;
+    border: 1px solid #CCCCCC;
+    border-radius: 4px;
+    color: #000000;
+    padding: 5px;
+}
+
+QSpinBox:focus, QDoubleSpinBox:focus {
+    border: 1px solid rgb(38, 162, 105);
+}</string>
+                 </property>
                  <property name="minimum">
                   <number>1</number>
                  </property>
                  <property name="maximum">
                   <number>10</number>
-                 </property>
-                </widget>
-               </item>
-               <item row="3" column="0">
-                <widget class="QLabel" name="endIntLabel">
-                 <property name="sizePolicy">
-                  <sizepolicy hsizetype="Preferred" vsizetype="Maximum">
-                   <horstretch>0</horstretch>
-                   <verstretch>0</verstretch>
-                  </sizepolicy>
-                 </property>
-                 <property name="minimumSize">
-                  <size>
-                   <width>0</width>
-                   <height>50</height>
-                  </size>
-                 </property>
-                 <property name="font">
-                  <font>
-                   <pointsize>16</pointsize>
-                   <bold>false</bold>
-                  </font>
-                 </property>
-                 <property name="styleSheet">
-                  <string notr="true">color: #212121;
-</string>
-                 </property>
-                 <property name="text">
-                  <string>Конец интервала:</string>
-                 </property>
-                 <property name="alignment">
-                  <set>Qt::AlignmentFlag::AlignJustify|Qt::AlignmentFlag::AlignVCenter</set>
-                 </property>
-                </widget>
-               </item>
-               <item row="1" column="1">
-                <widget class="QSpinBox" name="coefSpinBox">
-                 <property name="font">
-                  <font>
-                   <pointsize>16</pointsize>
-                   <bold>false</bold>
-                  </font>
-                 </property>
-                 <property name="minimum">
-                  <number>-5</number>
-                 </property>
-                 <property name="maximum">
-                  <number>5</number>
                  </property>
                 </widget>
                </item>
@@ -594,6 +559,19 @@ QPushButton:pressed {
                    <bold>false</bold>
                   </font>
                  </property>
+                 <property name="styleSheet">
+                  <string notr="true">QSpinBox, QDoubleSpinBox {
+    background-color: #FFFFFF;
+    border: 1px solid #CCCCCC;
+    border-radius: 4px;
+    color: #000000;
+    padding: 5px;
+}
+
+QSpinBox:focus, QDoubleSpinBox:focus {
+    border: 1px solid rgb(38, 162, 105);
+}</string>
+                 </property>
                  <property name="minimum">
                   <number>1</number>
                  </property>
@@ -602,8 +580,8 @@ QPushButton:pressed {
                  </property>
                 </widget>
                </item>
-               <item row="4" column="0">
-                <widget class="QLabel" name="stepsLabel">
+               <item row="1" column="0">
+                <widget class="QLabel" name="coefLabel">
                  <property name="sizePolicy">
                   <sizepolicy hsizetype="Preferred" vsizetype="Maximum">
                    <horstretch>0</horstretch>
@@ -627,7 +605,7 @@ QPushButton:pressed {
 </string>
                  </property>
                  <property name="text">
-                  <string>Количество ступеней:</string>
+                  <string>Коэффициенты:</string>
                  </property>
                  <property name="alignment">
                   <set>Qt::AlignmentFlag::AlignJustify|Qt::AlignmentFlag::AlignVCenter</set>
@@ -666,8 +644,99 @@ QPushButton:pressed {
                  </property>
                 </widget>
                </item>
-               <item row="1" column="0">
-                <widget class="QLabel" name="coefLabel">
+               <item row="4" column="1">
+                <widget class="QSpinBox" name="stepsSpinBox">
+                 <property name="font">
+                  <font>
+                   <pointsize>16</pointsize>
+                   <bold>false</bold>
+                  </font>
+                 </property>
+                 <property name="styleSheet">
+                  <string notr="true">QSpinBox, QDoubleSpinBox {
+    background-color: #FFFFFF;
+    border: 1px solid #CCCCCC;
+    border-radius: 4px;
+    color: #000000;
+    padding: 5px;
+}
+
+QSpinBox:focus, QDoubleSpinBox:focus {
+    border: 1px solid rgb(38, 162, 105);
+}</string>
+                 </property>
+                 <property name="minimum">
+                  <number>10</number>
+                 </property>
+                 <property name="maximum">
+                  <number>35</number>
+                 </property>
+                </widget>
+               </item>
+               <item row="2" column="1">
+                <widget class="QSpinBox" name="beginnigIntSpinBox">
+                 <property name="font">
+                  <font>
+                   <pointsize>16</pointsize>
+                   <bold>false</bold>
+                  </font>
+                 </property>
+                 <property name="styleSheet">
+                  <string notr="true">QSpinBox, QDoubleSpinBox {
+    background-color: #FFFFFF;
+    border: 1px solid #CCCCCC;
+    border-radius: 4px;
+    color: #000000;
+    padding: 5px;
+}
+
+QSpinBox:focus, QDoubleSpinBox:focus {
+    border: 1px solid rgb(38, 162, 105);
+}</string>
+                 </property>
+                 <property name="minimum">
+                  <number>-10</number>
+                 </property>
+                 <property name="maximum">
+                  <number>0</number>
+                 </property>
+                </widget>
+               </item>
+               <item row="1" column="1">
+                <widget class="QLineEdit" name="coefLineEdit">
+                 <property name="sizePolicy">
+                  <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                   <horstretch>40</horstretch>
+                   <verstretch>0</verstretch>
+                  </sizepolicy>
+                 </property>
+                 <property name="minimumSize">
+                  <size>
+                   <width>500</width>
+                   <height>26</height>
+                  </size>
+                 </property>
+                 <property name="styleSheet">
+                  <string notr="true">QLineEdit {
+    background-color: #FFFFFF;    
+    border: 1px solid #DCDCDC; 
+    border-radius: 6px;
+    color: #212121;
+    padding: 6px 10px;
+    font-size: 11pt;
+}
+
+QLineEdit:focus {
+    border: 1px solid rgb(38, 162, 105);
+}</string>
+                 </property>
+                 <property name="text">
+                  <string/>
+                 </property>
+                </widget>
+               </item>
+               <item row="3" column="0">
+                <widget class="QLabel" name="endIntLabel">
                  <property name="sizePolicy">
                   <sizepolicy hsizetype="Preferred" vsizetype="Maximum">
                    <horstretch>0</horstretch>
@@ -691,7 +760,7 @@ QPushButton:pressed {
 </string>
                  </property>
                  <property name="text">
-                  <string>Коэффициенты:</string>
+                  <string>Конец интервала:</string>
                  </property>
                  <property name="alignment">
                   <set>Qt::AlignmentFlag::AlignJustify|Qt::AlignmentFlag::AlignVCenter</set>
