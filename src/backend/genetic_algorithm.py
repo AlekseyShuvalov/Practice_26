@@ -1,74 +1,110 @@
 import random
-from math_functions import *
+from math_functions import StepFunc
 
-# Генетический алгоритм
+class GeneticAlgorithm:
+    def __init__(self, polynom, l, r, steps, config):
+        self.polynom = polynom
+        self.l = l
+        self.r = r
+        self.steps = steps
+        self.config = config
+        self.population = []
+        self.fitnesses = []
+        self.history = []
+        self.curr_generation = 0
+        self.y_min, self.y_max = polynom.get_bounds(l, r)
 
-def calc_fitness(heights, cfs, l, r, dots = 300):
-    err = 0
-    step = (r - l) / dots
-    for i in range(dots + 1):
-        x = l + i * step
-        fx = poly_value_at_point(cfs, x)
-        gx = step_func_value_at_point(heights, l, r, x)
-        err += abs(fx - gx)
-    error = err / (dots + 1)
-    return 1 / (1 + error)
+    def init_population(self):
+        self.population = [[random.uniform(self.y_min, self.y_max) for i in range(self.steps)]
+                           for j in range(self.config.population_size)]
+        self.curr_generation = 0
+        self.history = []
+        self.fitnesses = [self.calc_fitness(ind) for ind in self.population]
+        self.save_generation_state(self.fitnesses)
 
-def tournament_selection(population, fitnesses, tournament_size = 3):
-    best_id = -100
-    best_fitness = -100
-    for i in range(tournament_size):
-        id = random.randint(0, len(population) - 1)
-        if fitnesses[id] > best_fitness:
-            best_id = id
-            best_fitness = fitnesses[id]
-    return population[best_id]
+    def calc_fitness(self, heights, dots = 300):
+        step_func = StepFunc(heights, self.l, self.r)
+        step = (self.r - self.l) / dots
+        err = 0
+        for i in range(dots + 1):
+            x = self.l + i * step
+            fx = self.polynom.value_at_point(x)
+            gx = step_func.value_at_point(x)
+            err += abs(fx - gx)
+        error = err / (dots + 1)
+        return 1 / (1 + error)
 
-def crossover(first_parent, second_parent): # одноточечное
-    if len(first_parent) == 1: return first_parent[:], second_parent[:]
-    c = random.randint(1, len(first_parent) - 1)
-    first_child = first_parent[:c] + second_parent[c:]
-    second_child = second_parent[:c] + first_parent[c:]
-    return first_child, second_child
+    def tournament_selection(self, fitnesses, tournament_size = 3):
+        best_id = -100
+        best_fitness = -100
+        for i in range(tournament_size):
+            id = random.randint(0, len(self.population) - 1)
+            if fitnesses[id] > best_fitness:
+                best_id = id
+                best_fitness = fitnesses[id]
+        return self.population[best_id][:]
 
-def mutation(genotype, mutation_chance, y_min, y_max):
-    mut_range = (y_max - y_min) * 0.1
-    for i in range(len(genotype)):
-        if random.random() < mutation_chance:
-            genotype[i] += random.uniform(-mut_range, mut_range)
-            genotype[i] = max(y_min - mut_range, min(y_max + mut_range, genotype[i]))
-    return genotype
+    def crossover(self, first_parent, second_parent): # одноточечное
+        if len(first_parent) <= 1: return first_parent[:], second_parent[:]
+        c = random.randint(1, len(first_parent) - 1)
+        first_child = first_parent[:c] + second_parent[c:]
+        second_child = second_parent[:c] + first_parent[c:]
+        return first_child, second_child
 
-def genetic_algorithm(cfs, l, r, steps, population_size, generations, mutation_chance):
-    y_min, y_max = bounds_of_polynom(cfs, l, r)
-    population = [[random.uniform(y_min, y_max) for i in range(steps)] for j in range(population_size)]
-    best_genotype = None
-    best_fitness = -100
-    max_fitnesses = []
-    avg_fitnesses = []
-    for generation in range(generations):
-        fitnesses = [calc_fitness(ind, cfs, l, r) for ind in population]
-        max_fitness_id = fitnesses.index(max(fitnesses))
-        curr_max_fitness = fitnesses[max_fitness_id]
-        curr_avg_fitness = sum(fitnesses) / len(fitnesses)
-        max_fitnesses.append(curr_max_fitness)
-        avg_fitnesses.append(curr_avg_fitness)
-        if curr_max_fitness > best_fitness:
-            best_fitness = curr_max_fitness
-            best_genotype = population[max_fitness_id][:]
+    def mutation(self, genotype):
+        mut_range = (self.y_max - self.y_min) * 0.1
+        for i in range(len(genotype)):
+            if random.random() < self.config.mutation_chance:
+                genotype[i] += random.uniform(-mut_range, mut_range)
+                genotype[i] = max(self.y_min - mut_range, min(self.y_max + mut_range, genotype[i]))
+        return genotype
+
+    def generation_step(self):
+        if self.curr_generation >= self.config.generations: return False
+        max_fitness_id = self.fitnesses.index(max(self.fitnesses))
 
         new_population = []
-        new_population.append(best_genotype[:])
-        while len(new_population) < population_size:
-            first_parent = tournament_selection(population, fitnesses)
-            second_parent = tournament_selection(population, fitnesses)
-            first_child, second_child = crossover(first_parent, second_parent)
+        new_population.append(self.population[max_fitness_id][:])
 
-            first_child = mutation(first_child, mutation_chance, y_min, y_max)
-            second_child = mutation(second_child, mutation_chance, y_min, y_max)
+        while len(new_population) < self.config.population_size:
+            first_parent = self.tournament_selection(self.fitnesses)
+            second_parent = self.tournament_selection(self.fitnesses)
+            if random.random() < self.config.crossover_chance:
+                first_child, second_child = self.crossover(first_parent, second_parent)
+            else:
+                first_child = first_parent[:]
+                second_child = second_parent[:]
+
+            first_child = self.mutation(first_child)
+            second_child = self.mutation(second_child)
 
             new_population.append(first_child)
-            if len(new_population) < population_size: new_population.append(second_child)
-        population = new_population
+            if len(new_population) < self.config.population_size: new_population.append(second_child)
 
-    return best_genotype, max_fitnesses, avg_fitnesses
+        self.population = new_population
+        self.curr_generation += 1
+
+        self.fitnesses = [self.calc_fitness(ind) for ind in self.population]
+        self.save_generation_state(self.fitnesses)
+        return True
+
+    def go_to_generation(self, generation_num):
+        if 0 <= generation_num < len(self.history):
+            self.curr_generation = generation_num
+            self.population = self.history[generation_num]["population"][:]
+            self.fitnesses = [self.calc_fitness(ind) for ind in self.population]
+            return True
+        return False
+
+    def save_generation_state(self, fitnesses):
+        state = {"generation": self.curr_generation, "population": [ind[:] for ind in self.population],
+                 "best_genotype": None, "best_fitness": -100, "avg_fitness": -100}
+        max_fitness_id = fitnesses.index(max(fitnesses))
+        state["best_genotype"] = self.population[max_fitness_id][:]
+        state["best_fitness"] = fitnesses[max_fitness_id]
+        state["avg_fitness"] = sum(fitnesses) / len(fitnesses)
+        self.history.append(state)
+
+    def get_best_solution(self):
+        if not self.history: return None, -1
+        return self.history[-1]["best_genotype"], self.history[-1]["best_fitness"]
