@@ -54,7 +54,7 @@
        <enum>Qt::LayoutDirection::LeftToRight</enum>
       </property>
       <property name="currentIndex">
-       <number>4</number>
+       <number>0</number>
       </property>
       <widget class="QWidget" name="welcomePage">
        <property name="minimumSize">
@@ -1133,7 +1133,7 @@ QPushButton:pressed {
 </string>
             </property>
             <property name="text">
-             <string> Введите параметры задачи:</string>
+             <string> Введите параметры алгоритма:</string>
             </property>
             <property name="alignment">
              <set>Qt::AlignmentFlag::AlignJustify|Qt::AlignmentFlag::AlignVCenter</set>
@@ -1621,18 +1621,18 @@ QTabBar::tab:selected {
 }</string>
            </property>
            <property name="currentIndex">
-            <number>0</number>
+            <number>1</number>
            </property>
            <widget class="QWidget" name="tab">
             <attribute name="title">
-             <string>Tab 1</string>
+             <string>Приблежение</string>
             </attribute>
             <widget class="QWidget" name="layoutWidget">
              <property name="geometry">
               <rect>
                <x>0</x>
                <y>290</y>
-               <width>771</width>
+               <width>781</width>
                <height>71</height>
               </rect>
              </property>
@@ -1653,7 +1653,7 @@ QTabBar::tab:selected {
                 </property>
                 <property name="minimumSize">
                  <size>
-                  <width>170</width>
+                  <width>120</width>
                   <height>50</height>
                  </size>
                 </property>
@@ -1691,7 +1691,7 @@ QPushButton:pressed {
                 </property>
                 <property name="minimumSize">
                  <size>
-                  <width>170</width>
+                  <width>120</width>
                   <height>50</height>
                  </size>
                 </property>
@@ -1729,7 +1729,7 @@ QPushButton:pressed {
                 </property>
                 <property name="minimumSize">
                  <size>
-                  <width>170</width>
+                  <width>120</width>
                   <height>50</height>
                  </size>
                 </property>
@@ -1754,6 +1754,42 @@ QPushButton:pressed {
                 </property>
                 <property name="text">
                  <string>В конец</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QLineEdit" name="lineEdit">
+                <property name="sizePolicy">
+                 <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                  <horstretch>0</horstretch>
+                  <verstretch>0</verstretch>
+                 </sizepolicy>
+                </property>
+                <property name="minimumSize">
+                 <size>
+                  <width>120</width>
+                  <height>50</height>
+                 </size>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">QLineEdit {
+    background-color: #FFFFFF;
+    border: 1px solid #0078D7;
+    border-radius: 8px;
+    color: #212121;
+    font-family: &quot;Segoe UI&quot;;
+    font-size: 12pt;
+}
+</string>
+                </property>
+                <property name="text">
+                 <string/>
+                </property>
+                <property name="alignment">
+                 <set>Qt::AlignmentFlag::AlignCenter</set>
+                </property>
+                <property name="placeholderText">
+                 <string notr="true">К поколению №</string>
                 </property>
                </widget>
               </item>
@@ -1787,57 +1823,17 @@ QPushButton:pressed {
              <widget class="QWidget" name="layoutWidget">
               <property name="geometry">
                <rect>
-                <x>10</x>
+                <x>0</x>
                 <y>0</y>
-                <width>191</width>
-                <height>164</height>
+                <width>201</width>
+                <height>173</height>
                </rect>
               </property>
               <layout class="QGridLayout" name="gridLayout_3">
-               <item row="0" column="0">
-                <widget class="QLabel" name="degLabel_1">
-                 <property name="sizePolicy">
-                  <sizepolicy hsizetype="Preferred" vsizetype="Maximum">
-                   <horstretch>0</horstretch>
-                   <verstretch>0</verstretch>
-                  </sizepolicy>
-                 </property>
-                 <property name="minimumSize">
-                  <size>
-                   <width>0</width>
-                   <height>50</height>
-                  </size>
-                 </property>
-                 <property name="font">
-                  <font>
-                   <pointsize>11</pointsize>
-                   <bold>false</bold>
-                  </font>
-                 </property>
-                 <property name="styleSheet">
-                  <string notr="true">color: #212121;
-</string>
-                 </property>
-                 <property name="text">
-                  <string>Информация:</string>
-                 </property>
-                 <property name="alignment">
-                  <set>Qt::AlignmentFlag::AlignJustify|Qt::AlignmentFlag::AlignVCenter</set>
-                 </property>
-                </widget>
-               </item>
-               <item row="0" column="1">
-                <widget class="QLabel" name="label">
-                 <property name="styleSheet">
-                  <string notr="true">color: #212121;
-</string>
-                 </property>
-                 <property name="text">
-                  <string/>
-                 </property>
-                </widget>
-               </item>
-               <item row="1" column="0">
+               <property name="leftMargin">
+                <number>0</number>
+               </property>
+               <item row="2" column="0">
                 <widget class="QLabel" name="coefLabel_2">
                  <property name="sizePolicy">
                   <sizepolicy hsizetype="Preferred" vsizetype="Maximum">
@@ -1862,15 +1858,53 @@ QPushButton:pressed {
 </string>
                  </property>
                  <property name="text">
-                  <string>Поколение</string>
+                  <string>Поколение:</string>
                  </property>
                  <property name="alignment">
                   <set>Qt::AlignmentFlag::AlignJustify|Qt::AlignmentFlag::AlignVCenter</set>
                  </property>
+                 <property name="margin">
+                  <number>4</number>
+                 </property>
                 </widget>
                </item>
-               <item row="1" column="1">
-                <widget class="QLabel" name="label_2">
+               <item row="0" column="0" colspan="2">
+                <widget class="QLabel" name="degLabel_1">
+                 <property name="sizePolicy">
+                  <sizepolicy hsizetype="Preferred" vsizetype="Maximum">
+                   <horstretch>0</horstretch>
+                   <verstretch>0</verstretch>
+                  </sizepolicy>
+                 </property>
+                 <property name="minimumSize">
+                  <size>
+                   <width>0</width>
+                   <height>50</height>
+                  </size>
+                 </property>
+                 <property name="font">
+                  <font>
+                   <pointsize>11</pointsize>
+                   <bold>false</bold>
+                  </font>
+                 </property>
+                 <property name="styleSheet">
+                  <string notr="true">color: #212121;
+</string>
+                 </property>
+                 <property name="text">
+                  <string>Информация</string>
+                 </property>
+                 <property name="alignment">
+                  <set>Qt::AlignmentFlag::AlignJustify|Qt::AlignmentFlag::AlignVCenter</set>
+                 </property>
+                 <property name="margin">
+                  <number>4</number>
+                 </property>
+                </widget>
+               </item>
+               <item row="2" column="1">
+                <widget class="QLabel" name="generationNum">
                  <property name="styleSheet">
                   <string notr="true">color: #212121;
 </string>
@@ -1880,7 +1914,18 @@ QPushButton:pressed {
                  </property>
                 </widget>
                </item>
-               <item row="2" column="0">
+               <item row="3" column="1">
+                <widget class="QLabel" name="bestMistake">
+                 <property name="styleSheet">
+                  <string notr="true">color: #212121;
+</string>
+                 </property>
+                 <property name="text">
+                  <string/>
+                 </property>
+                </widget>
+               </item>
+               <item row="3" column="0">
                 <widget class="QLabel" name="beginnigIntLabel_2">
                  <property name="sizePolicy">
                   <sizepolicy hsizetype="Preferred" vsizetype="Maximum">
@@ -1905,31 +1950,78 @@ QPushButton:pressed {
 </string>
                  </property>
                  <property name="text">
-                  <string>Лучшая ошибка</string>
+                  <string>Лучшая ошибка:</string>
                  </property>
                  <property name="alignment">
                   <set>Qt::AlignmentFlag::AlignJustify|Qt::AlignmentFlag::AlignVCenter</set>
                  </property>
+                 <property name="margin">
+                  <number>4</number>
+                 </property>
                 </widget>
                </item>
-               <item row="2" column="1">
-                <widget class="QLabel" name="label_3">
-                 <property name="styleSheet">
-                  <string notr="true">color: #212121;
-</string>
+               <item row="1" column="0" colspan="2">
+                <widget class="Line" name="line">
+                 <property name="minimumSize">
+                  <size>
+                   <width>52</width>
+                   <height>0</height>
+                  </size>
                  </property>
-                 <property name="text">
-                  <string/>
+                 <property name="orientation">
+                  <enum>Qt::Orientation::Horizontal</enum>
                  </property>
                 </widget>
                </item>
               </layout>
              </widget>
+             <widget class="QLineEdit" name="lineEdit_2">
+              <property name="geometry">
+               <rect>
+                <x>10</x>
+                <y>170</y>
+                <width>181</width>
+                <height>71</height>
+               </rect>
+              </property>
+              <property name="sizePolicy">
+               <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                <horstretch>0</horstretch>
+                <verstretch>0</verstretch>
+               </sizepolicy>
+              </property>
+              <property name="minimumSize">
+               <size>
+                <width>120</width>
+                <height>50</height>
+               </size>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">QLineEdit {
+    background-color: #FFFFFF;
+    border: 1px solid #26a269;
+    border-radius: 8px;
+    color: #212121;
+    font-family: &quot;Segoe UI&quot;;
+    font-size: 12pt;
+}
+</string>
+              </property>
+              <property name="text">
+               <string/>
+              </property>
+              <property name="alignment">
+               <set>Qt::AlignmentFlag::AlignCenter</set>
+              </property>
+              <property name="placeholderText">
+               <string notr="true">Перейти к индивиду №</string>
+              </property>
+             </widget>
             </widget>
            </widget>
            <widget class="QWidget" name="tab_2">
             <attribute name="title">
-             <string>Tab 2</string>
+             <string>Ошибка</string>
             </attribute>
             <widget class="QWidget" name="functionPlotContainer" native="true">
              <property name="geometry">
