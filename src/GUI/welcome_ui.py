@@ -28,10 +28,10 @@ class Ui_MainWindow(object):
         MainWindow.setMinimumSize(QSize(800, 600))
         self.centralwidget = QWidget(MainWindow)
         self.centralwidget.setObjectName(u"centralwidget")
-        self.verticalLayout_7 = QVBoxLayout(self.centralwidget)
-        self.verticalLayout_7.setSpacing(0)
-        self.verticalLayout_7.setObjectName(u"verticalLayout_7")
-        self.verticalLayout_7.setContentsMargins(0, 0, 0, 0)
+        self.horizontalLayout = QHBoxLayout(self.centralwidget)
+        self.horizontalLayout.setSpacing(0)
+        self.horizontalLayout.setObjectName(u"horizontalLayout")
+        self.horizontalLayout.setContentsMargins(0, 0, 0, 0)
         self.stackedWidget = QStackedWidget(self.centralwidget)
         self.stackedWidget.setObjectName(u"stackedWidget")
         self.welcomePage = QWidget()
@@ -476,18 +476,117 @@ class Ui_MainWindow(object):
         self.stackedWidget.addWidget(self.startPage)
         self.aboutPage = QWidget()
         self.aboutPage.setObjectName(u"aboutPage")
+        self.aboutCard = QFrame(self.aboutPage)
+        self.aboutCard.setObjectName(u"aboutCard")
+        self.aboutCard.setGeometry(QRect(0, 0, 800, 600))
+        self.aboutCard.setStyleSheet(u"QFrame#aboutCard {\n"
+"    background-color: #FFFFFF;\n"
+"    border: 1px solid #E0E0E0;\n"
+"}")
+        self.aboutCard.setFrameShape(QFrame.Shape.StyledPanel)
+        self.aboutCard.setFrameShadow(QFrame.Shadow.Raised)
+        self.verticalLayout_8 = QVBoxLayout(self.aboutCard)
+        self.verticalLayout_8.setSpacing(0)
+        self.verticalLayout_8.setObjectName(u"verticalLayout_8")
+        self.verticalLayout_8.setContentsMargins(0, 0, 0, 0)
+        self.verticalLayout_9 = QVBoxLayout()
+        self.verticalLayout_9.setSpacing(0)
+        self.verticalLayout_9.setObjectName(u"verticalLayout_9")
+        self.verticalLayout_9.setContentsMargins(5, -1, -1, -1)
+        self.verticalLayout_10 = QVBoxLayout()
+        self.verticalLayout_10.setSpacing(0)
+        self.verticalLayout_10.setObjectName(u"verticalLayout_10")
+        self.verticalLayout_10.setContentsMargins(0, 0, 0, 0)
+        self.descriptionParamLabel_2 = QLabel(self.aboutCard)
+        self.descriptionParamLabel_2.setObjectName(u"descriptionParamLabel_2")
+        sizePolicy1.setHeightForWidth(self.descriptionParamLabel_2.sizePolicy().hasHeightForWidth())
+        self.descriptionParamLabel_2.setSizePolicy(sizePolicy1)
+        self.descriptionParamLabel_2.setMinimumSize(QSize(0, 70))
+        self.descriptionParamLabel_2.setFont(font3)
+        self.descriptionParamLabel_2.setStyleSheet(u"color: #212121;\n"
+"")
+        self.descriptionParamLabel_2.setAlignment(Qt.AlignmentFlag.AlignJustify|Qt.AlignmentFlag.AlignVCenter)
+        self.descriptionParamLabel_2.setMargin(11)
+
+        self.verticalLayout_10.addWidget(self.descriptionParamLabel_2)
+
+
+        self.verticalLayout_9.addLayout(self.verticalLayout_10)
+
+        self.verticalSpacer_3 = QSpacerItem(20, 45, QSizePolicy.Policy.Minimum, QSizePolicy.Policy.Fixed)
+
+        self.verticalLayout_9.addItem(self.verticalSpacer_3)
+
+        self.taskDescription = QLabel(self.aboutCard)
+        self.taskDescription.setObjectName(u"taskDescription")
+        self.taskDescription.setFont(font2)
+        self.taskDescription.setStyleSheet(u"color: #212121;\n"
+"")
+        self.taskDescription.setAlignment(Qt.AlignmentFlag.AlignJustify|Qt.AlignmentFlag.AlignVCenter)
+
+        self.verticalLayout_9.addWidget(self.taskDescription)
+
+        self.authors = QLabel(self.aboutCard)
+        self.authors.setObjectName(u"authors")
+        self.authors.setFont(font2)
+        self.authors.setStyleSheet(u"color: #212121;\n"
+"")
+
+        self.verticalLayout_9.addWidget(self.authors)
+
+        self.verticalSpacer_4 = QSpacerItem(20, 40, QSizePolicy.Policy.Minimum, QSizePolicy.Policy.Expanding)
+
+        self.verticalLayout_9.addItem(self.verticalSpacer_4)
+
+        self.horizontalLayout_3 = QHBoxLayout()
+        self.horizontalLayout_3.setSpacing(0)
+        self.horizontalLayout_3.setObjectName(u"horizontalLayout_3")
+        self.horizontalLayout_3.setContentsMargins(6, -1, 0, 20)
+        self.backButton_2 = QPushButton(self.aboutCard)
+        self.backButton_2.setObjectName(u"backButton_2")
+        self.backButton_2.setEnabled(True)
+        sizePolicy3.setHeightForWidth(self.backButton_2.sizePolicy().hasHeightForWidth())
+        self.backButton_2.setSizePolicy(sizePolicy3)
+        self.backButton_2.setMinimumSize(QSize(280, 50))
+        self.backButton_2.setLayoutDirection(Qt.LayoutDirection.LeftToRight)
+        self.backButton_2.setStyleSheet(u"QPushButton {\n"
+"    background-color: #FFFFFF;\n"
+"    border: 1px solid rgb(224, 27, 36);\n"
+"    border-radius: 8px;\n"
+"    color: #212121;\n"
+"    font-family: \"Segoe UI\";\n"
+"    font-size: 12pt;\n"
+"}\n"
+"QPushButton:hover {\n"
+"    background-color: rgb(255, 176, 176);\n"
+"    border: 1px solid rgb(224, 27, 36);\n"
+"    color: rgb(224, 27, 36);\n"
+"}\n"
+"QPushButton:pressed {\n"
+"    background-color: rgb(224, 27, 36);\n"
+"    color: #FFFFFF;\n"
+"}")
+
+        self.horizontalLayout_3.addWidget(self.backButton_2, 0, Qt.AlignmentFlag.AlignLeft)
+
+
+        self.verticalLayout_9.addLayout(self.horizontalLayout_3)
+
+
+        self.verticalLayout_8.addLayout(self.verticalLayout_9)
+
         self.stackedWidget.addWidget(self.aboutPage)
         self.algoritmPage = QWidget()
         self.algoritmPage.setObjectName(u"algoritmPage")
         self.stackedWidget.addWidget(self.algoritmPage)
 
-        self.verticalLayout_7.addWidget(self.stackedWidget)
+        self.horizontalLayout.addWidget(self.stackedWidget)
 
         MainWindow.setCentralWidget(self.centralwidget)
 
         self.retranslateUi(MainWindow)
 
-        self.stackedWidget.setCurrentIndex(1)
+        self.stackedWidget.setCurrentIndex(0)
 
 
         QMetaObject.connectSlotsByName(MainWindow)
@@ -503,7 +602,7 @@ class Ui_MainWindow(object):
         self.startButton.setText(QCoreApplication.translate("MainWindow", u"\u0417\u0430\u0434\u0430\u0442\u044c \u0434\u0430\u043d\u043d\u044b\u0435 \u0432\u0440\u0443\u0447\u043d\u0443\u044e", None))
         self.loadButton.setText(QCoreApplication.translate("MainWindow", u"\u0417\u0430\u0433\u0440\u0443\u0437\u0438\u0442\u044c \u0434\u0430\u043d\u043d\u044b\u0435 \u0438\u0437 \u0444\u0430\u0439\u043b\u0430", None))
         self.aboutButton.setText(QCoreApplication.translate("MainWindow", u"\u041e \u043f\u0440\u043e\u0433\u0440\u0430\u043c\u043c\u0435", None))
-        self.descriptionParamLabel.setText(QCoreApplication.translate("MainWindow", u"\u0412\u0432\u0435\u0434\u0438\u0442\u0435 \u043f\u0430\u0440\u0430\u043c\u0435\u0442\u0440\u044b \u0437\u0430\u0434\u0430\u0447\u0438:", None))
+        self.descriptionParamLabel.setText(QCoreApplication.translate("MainWindow", u" \u0412\u0432\u0435\u0434\u0438\u0442\u0435 \u043f\u0430\u0440\u0430\u043c\u0435\u0442\u0440\u044b \u0437\u0430\u0434\u0430\u0447\u0438:", None))
         self.stepsLabel.setText(QCoreApplication.translate("MainWindow", u"\u041a\u043e\u043b\u0438\u0447\u0435\u0441\u0442\u0432\u043e \u0441\u0442\u0443\u043f\u0435\u043d\u0435\u0439:", None))
         self.beginnigIntLabel.setText(QCoreApplication.translate("MainWindow", u"\u041d\u0430\u0447\u0430\u043b\u043e \u0438\u043d\u0442\u0435\u0440\u0432\u0430\u043b\u0430:", None))
         self.coefLabel.setText(QCoreApplication.translate("MainWindow", u"\u041a\u043e\u044d\u0444\u0444\u0438\u0446\u0438\u0435\u043d\u0442\u044b:", None))
@@ -512,5 +611,17 @@ class Ui_MainWindow(object):
         self.endIntLabel.setText(QCoreApplication.translate("MainWindow", u"\u041a\u043e\u043d\u0435\u0446 \u0438\u043d\u0442\u0435\u0440\u0432\u0430\u043b\u0430:", None))
         self.backButton_1.setText(QCoreApplication.translate("MainWindow", u"\u041d\u0430\u0437\u0430\u0434", None))
         self.nextButton_1.setText(QCoreApplication.translate("MainWindow", u"\u0412\u043f\u0435\u0440\u0435\u0434", None))
+        self.descriptionParamLabel_2.setText(QCoreApplication.translate("MainWindow", u"\u0418\u043d\u0444\u043e\u0440\u043c\u0430\u0446\u0438\u044f \u043e \u043f\u0440\u043e\u0433\u0440\u0430\u043c\u043c\u0435:", None))
+        self.taskDescription.setText(QCoreApplication.translate("MainWindow", u"\u0423\u0441\u043b\u043e\u0432\u0438\u0435 \u0437\u0430\u0434\u0430\u0447\u0438: \n"
+" \u0414\u043b\u044f \u0437\u0430\u0434\u0430\u043d\u043d\u043e\u0433\u043e \u043f\u043e\u043b\u0438\u043d\u043e\u043c\u0430 f(x) (\u0441\u0442\u0435\u043f\u0435\u043d\u044c \u043d\u0435 \u0431\u043e\u043b\u044c\u0448\u0435 8) \u043d\u0435\u043e\u0431\u0445\u043e\u0434\u0438\u043c\u043e \u043d\u0430\u0439\u0442\u0438 \u043f\u0430\u0440\u0430\u043c\u0435\u0442\u0440\u044b\n"
+" \u0441\u0442\u0443\u043f\u0435\u043d\u0447\u0430\u0442\u043e\u0439 \u0444\u0443\u043d\u043a\u0446\u0438\u0438 g(x) (\u0432\u044b\u0441\u043e\u0442\u0430 \u201c\u0441\u0442\u0443\u043f\u0435\u043d\u0435\u0439\u201d), \u043a\u043e\u0442\u043e\u0440\u0430\u044f \u043f\u0440\u0438\u0431\u043b\u0438\u0436\u0430\u0435\u0442 \u043f\u043e\u043b\u0438\u043d\u043e\u043c\u0438\u0430\u043b\u044c\u043d\u0443\u044e\n"
+" \u0444\u0443\u043d\u043a\u0446\u0438\u044e, \u0442\u043e \u0435\u0441\u0442\u044c \u043c\u0438\u043d\u0438\u043c\u0438\u0437\u0438\u0440\u043e\u0432\u0430"
+                        "\u0442\u044c \u0440\u0430\u0441\u0441\u0442\u043e\u044f\u043d\u0438\u0435 |f(x) - g(x)| \u043c\u0435\u0436\u0434\u0443 \u0444\u0443\u043d\u043a\u0446\u0438\u044f\u043c\u0438 \u043d\u0430\n"
+" \u0437\u0430\u0434\u0430\u043d\u043d\u043e\u043c \u0438\u043d\u0442\u0435\u0440\u0432\u0430\u043b\u0435 [l, r]. \u041a\u043e\u043b\u0438\u0447\u0435\u0441\u0442\u0432\u043e \u0441\u0442\u0443\u043f\u0435\u043d\u0435\u0439 \u0432\u0432\u043e\u0434\u044f\u0442\u0441\u044f \u043f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u0435\u043c.\n"
+"", None))
+        self.authors.setText(QCoreApplication.translate("MainWindow", u"\u0410\u0432\u0442\u043e\u0440\u044b: \n"
+" \u0413\u0430\u0432\u0440\u0438\u0448 \u041c\u0430\u0442\u0432\u0435\u0439 - SuperNeonZ\n"
+" \u0422\u0440\u0443\u0448\u043a\u0438\u043d \u0410\u043b\u0435\u043a\u0441\u0430\u043d\u0434\u0440 - Trushkin-Alexandr\n"
+" \u0428\u0443\u0432\u0430\u043b\u043e\u0432 \u0410\u043b\u0435\u043a\u0441\u0435\u0439 - AlekseyShuvalov", None))
+        self.backButton_2.setText(QCoreApplication.translate("MainWindow", u"\u041d\u0430\u0437\u0430\u0434", None))
     # retranslateUi
-

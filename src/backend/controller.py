@@ -27,6 +27,7 @@ class AppController:
 
         self.ui.backButton_1.clicked.connect(self.on_back_to_menu)
         self.ui.nextButton_1.clicked.connect(self.submit_entered_data)
+        self.ui.backButton_2.clicked.connect(self.on_back_to_menu)
 
     def on_manual_input(self):
         self.ui.stackedWidget.setCurrentIndex(1)
@@ -55,7 +56,6 @@ class AppController:
 
     def on_random_generate(self):
         self.current_task = self.data_manager.generate_random_task()
-
         print(f"Сгенерирована случайная задача: {self.current_task}")
 
     def on_back_to_menu(self):
@@ -105,11 +105,7 @@ class AppController:
         pass
 
     def on_about(self):
-        QMessageBox.about(self.window,"О программе",
-        "Приближение полиномиальной функции ступенчатой функцией с использованием генетического алгоритма.\n\n"
-            "Разработано в рамках учебной практики СПбГЭТУ ЛЭТИ.\n\n"
-            "Авторы: Шувалов Алексей, Трушкин Александр, Гавриш Матвей"
-        )
+        self.ui.stackedWidget.setCurrentIndex(2)
 
     def run(self):
         self.window.show()

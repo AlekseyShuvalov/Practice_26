@@ -20,7 +20,7 @@
    <string>Приближение ступенчатой функцией</string>
   </property>
   <widget class="QWidget" name="centralwidget">
-   <layout class="QVBoxLayout" name="verticalLayout_7">
+   <layout class="QHBoxLayout" name="horizontalLayout">
     <property name="spacing">
      <number>0</number>
     </property>
@@ -39,7 +39,7 @@
     <item>
      <widget class="QStackedWidget" name="stackedWidget">
       <property name="currentIndex">
-       <number>1</number>
+       <number>0</number>
       </property>
       <widget class="QWidget" name="welcomePage">
        <layout class="QHBoxLayout" name="horizontalLayout_4">
@@ -419,7 +419,7 @@ QPushButton:pressed {
 </string>
                  </property>
                  <property name="text">
-                  <string>Введите параметры задачи:</string>
+                  <string> Введите параметры задачи:</string>
                  </property>
                  <property name="alignment">
                   <set>Qt::AlignmentFlag::AlignJustify|Qt::AlignmentFlag::AlignVCenter</set>
@@ -718,8 +718,8 @@ QSpinBox:focus, QDoubleSpinBox:focus {
                  </property>
                  <property name="styleSheet">
                   <string notr="true">QLineEdit {
-    background-color: #FFFFFF;    
-    border: 1px solid #DCDCDC; 
+    background-color: #FFFFFF;
+    border: 1px solid #DCDCDC;
     border-radius: 6px;
     color: #212121;
     padding: 6px 10px;
@@ -884,7 +884,243 @@ QPushButton:pressed {
         </item>
        </layout>
       </widget>
-      <widget class="QWidget" name="aboutPage"/>
+      <widget class="QWidget" name="aboutPage">
+       <widget class="QFrame" name="aboutCard">
+        <property name="geometry">
+         <rect>
+          <x>0</x>
+          <y>0</y>
+          <width>800</width>
+          <height>600</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QFrame#aboutCard {
+    background-color: #FFFFFF;
+    border: 1px solid #E0E0E0;
+}</string>
+        </property>
+        <property name="frameShape">
+         <enum>QFrame::Shape::StyledPanel</enum>
+        </property>
+        <property name="frameShadow">
+         <enum>QFrame::Shadow::Raised</enum>
+        </property>
+        <layout class="QVBoxLayout" name="verticalLayout_8">
+         <property name="spacing">
+          <number>0</number>
+         </property>
+         <property name="leftMargin">
+          <number>0</number>
+         </property>
+         <property name="topMargin">
+          <number>0</number>
+         </property>
+         <property name="rightMargin">
+          <number>0</number>
+         </property>
+         <property name="bottomMargin">
+          <number>0</number>
+         </property>
+         <item>
+          <layout class="QVBoxLayout" name="verticalLayout_9">
+           <property name="spacing">
+            <number>0</number>
+           </property>
+           <property name="leftMargin">
+            <number>5</number>
+           </property>
+           <item>
+            <layout class="QVBoxLayout" name="verticalLayout_10" stretch="0">
+             <property name="spacing">
+              <number>0</number>
+             </property>
+             <property name="leftMargin">
+              <number>0</number>
+             </property>
+             <property name="topMargin">
+              <number>0</number>
+             </property>
+             <property name="rightMargin">
+              <number>0</number>
+             </property>
+             <property name="bottomMargin">
+              <number>0</number>
+             </property>
+             <item>
+              <widget class="QLabel" name="descriptionParamLabel_2">
+               <property name="sizePolicy">
+                <sizepolicy hsizetype="Preferred" vsizetype="Maximum">
+                 <horstretch>0</horstretch>
+                 <verstretch>0</verstretch>
+                </sizepolicy>
+               </property>
+               <property name="minimumSize">
+                <size>
+                 <width>0</width>
+                 <height>70</height>
+                </size>
+               </property>
+               <property name="font">
+                <font>
+                 <pointsize>20</pointsize>
+                 <bold>false</bold>
+                </font>
+               </property>
+               <property name="styleSheet">
+                <string notr="true">color: #212121;
+</string>
+               </property>
+               <property name="text">
+                <string>Информация о программе:</string>
+               </property>
+               <property name="alignment">
+                <set>Qt::AlignmentFlag::AlignJustify|Qt::AlignmentFlag::AlignVCenter</set>
+               </property>
+               <property name="margin">
+                <number>11</number>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </item>
+           <item>
+            <spacer name="verticalSpacer_3">
+             <property name="orientation">
+              <enum>Qt::Orientation::Vertical</enum>
+             </property>
+             <property name="sizeType">
+              <enum>QSizePolicy::Policy::Fixed</enum>
+             </property>
+             <property name="sizeHint" stdset="0">
+              <size>
+               <width>20</width>
+               <height>45</height>
+              </size>
+             </property>
+            </spacer>
+           </item>
+           <item>
+            <widget class="QLabel" name="taskDescription">
+             <property name="font">
+              <font>
+               <pointsize>16</pointsize>
+              </font>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">color: #212121;
+</string>
+             </property>
+             <property name="text">
+              <string>Условие задачи:
+ Для заданного полинома f(x) (степень не больше 8) необходимо найти параметры
+ ступенчатой функции g(x) (высота “ступеней”), которая приближает полиномиальную
+ функцию, то есть минимизировать расстояние |f(x) - g(x)| между функциями на
+ заданном интервале [l, r]. Количество ступеней вводятся пользователем.
+</string>
+             </property>
+             <property name="alignment">
+              <set>Qt::AlignmentFlag::AlignJustify|Qt::AlignmentFlag::AlignVCenter</set>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLabel" name="authors">
+             <property name="font">
+              <font>
+               <pointsize>16</pointsize>
+              </font>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">color: #212121;
+</string>
+             </property>
+             <property name="text">
+              <string>Авторы:
+ Гавриш Матвей - SuperNeonZ
+ Трушкин Александр - Trushkin-Alexandr
+ Шувалов Алексей - AlekseyShuvalov</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <spacer name="verticalSpacer_4">
+             <property name="orientation">
+              <enum>Qt::Orientation::Vertical</enum>
+             </property>
+             <property name="sizeHint" stdset="0">
+              <size>
+               <width>20</width>
+               <height>40</height>
+              </size>
+             </property>
+            </spacer>
+           </item>
+           <item>
+            <layout class="QHBoxLayout" name="horizontalLayout_3">
+             <property name="spacing">
+              <number>0</number>
+             </property>
+             <property name="leftMargin">
+              <number>6</number>
+             </property>
+             <property name="rightMargin">
+              <number>0</number>
+             </property>
+             <property name="bottomMargin">
+              <number>20</number>
+             </property>
+             <item alignment="Qt::AlignmentFlag::AlignLeft">
+              <widget class="QPushButton" name="backButton_2">
+               <property name="enabled">
+                <bool>true</bool>
+               </property>
+               <property name="sizePolicy">
+                <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                 <horstretch>0</horstretch>
+                 <verstretch>0</verstretch>
+                </sizepolicy>
+               </property>
+               <property name="minimumSize">
+                <size>
+                 <width>280</width>
+                 <height>50</height>
+                </size>
+               </property>
+               <property name="layoutDirection">
+                <enum>Qt::LayoutDirection::LeftToRight</enum>
+               </property>
+               <property name="styleSheet">
+                <string notr="true">QPushButton {
+    background-color: #FFFFFF;
+    border: 1px solid rgb(224, 27, 36);
+    border-radius: 8px;
+    color: #212121;
+    font-family: &quot;Segoe UI&quot;;
+    font-size: 12pt;
+}
+QPushButton:hover {
+    background-color: rgb(255, 176, 176);
+    border: 1px solid rgb(224, 27, 36);
+    color: rgb(224, 27, 36);
+}
+QPushButton:pressed {
+    background-color: rgb(224, 27, 36);
+    color: #FFFFFF;
+}</string>
+               </property>
+               <property name="text">
+                <string>Назад</string>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </item>
+          </layout>
+         </item>
+        </layout>
+       </widget>
+      </widget>
       <widget class="QWidget" name="algoritmPage"/>
      </widget>
     </item>
