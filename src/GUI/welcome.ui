@@ -54,7 +54,7 @@
        <enum>Qt::LayoutDirection::LeftToRight</enum>
       </property>
       <property name="currentIndex">
-       <number>1</number>
+       <number>4</number>
       </property>
       <widget class="QWidget" name="welcomePage">
        <property name="minimumSize">
@@ -1589,9 +1589,36 @@ QPushButton:pressed {
             </size>
            </property>
            <property name="styleSheet">
-            <string notr="true">background-color: #FFFFFF;
-border: 1px solid #E0E0E0;
-</string>
+            <string notr="true">QTabWidget::pane {
+    border: 1px solid #CCCCCC;
+    background-color: #FFFFFF;
+    border-radius: 4px;
+}
+
+QTabBar::tab {
+    background-color: #EAEAEA;
+    color: #212121;
+    border: 1px solid #CCCCCC;
+    border-top-left-radius: 6px;
+    border-top-right-radius: 6px;
+    padding: 8px 20px;
+    font-family: &quot;Segoe UI&quot;, sans-serif;
+    font-size: 11pt;
+}
+
+QTabBar::tab:hover {
+    background-color: rgb(206, 255, 232); 
+    color: rgb(38, 162, 105);
+}
+
+QTabBar::tab:selected {
+    background-color: #FFFFFF;
+    color: rgb(38, 162, 105); 
+    border-top: 3px solid rgb(38, 162, 105); 
+    border-left: 1px solid #CCCCCC;
+    border-right: 1px solid #CCCCCC;
+    padding-bottom: 9px;
+}</string>
            </property>
            <property name="currentIndex">
             <number>0</number>
@@ -1600,147 +1627,6 @@ border: 1px solid #E0E0E0;
             <attribute name="title">
              <string>Tab 1</string>
             </attribute>
-            <widget class="QWidget" name="layoutWidget">
-             <property name="geometry">
-              <rect>
-               <x>10</x>
-               <y>10</y>
-               <width>197</width>
-               <height>164</height>
-              </rect>
-             </property>
-             <layout class="QGridLayout" name="gridLayout_3">
-              <item row="0" column="0">
-               <widget class="QLabel" name="degLabel_1">
-                <property name="sizePolicy">
-                 <sizepolicy hsizetype="Preferred" vsizetype="Maximum">
-                  <horstretch>0</horstretch>
-                  <verstretch>0</verstretch>
-                 </sizepolicy>
-                </property>
-                <property name="minimumSize">
-                 <size>
-                  <width>0</width>
-                  <height>50</height>
-                 </size>
-                </property>
-                <property name="font">
-                 <font>
-                  <pointsize>11</pointsize>
-                  <bold>false</bold>
-                 </font>
-                </property>
-                <property name="styleSheet">
-                 <string notr="true">color: #212121;
-</string>
-                </property>
-                <property name="text">
-                 <string>Информация:</string>
-                </property>
-                <property name="alignment">
-                 <set>Qt::AlignmentFlag::AlignJustify|Qt::AlignmentFlag::AlignVCenter</set>
-                </property>
-               </widget>
-              </item>
-              <item row="0" column="1">
-               <widget class="QLabel" name="label">
-                <property name="styleSheet">
-                 <string notr="true">color: #212121;
-</string>
-                </property>
-                <property name="text">
-                 <string/>
-                </property>
-               </widget>
-              </item>
-              <item row="1" column="0">
-               <widget class="QLabel" name="coefLabel_2">
-                <property name="sizePolicy">
-                 <sizepolicy hsizetype="Preferred" vsizetype="Maximum">
-                  <horstretch>0</horstretch>
-                  <verstretch>0</verstretch>
-                 </sizepolicy>
-                </property>
-                <property name="minimumSize">
-                 <size>
-                  <width>0</width>
-                  <height>50</height>
-                 </size>
-                </property>
-                <property name="font">
-                 <font>
-                  <pointsize>11</pointsize>
-                  <bold>false</bold>
-                 </font>
-                </property>
-                <property name="styleSheet">
-                 <string notr="true">color: #212121;
-</string>
-                </property>
-                <property name="text">
-                 <string>Поколение</string>
-                </property>
-                <property name="alignment">
-                 <set>Qt::AlignmentFlag::AlignJustify|Qt::AlignmentFlag::AlignVCenter</set>
-                </property>
-               </widget>
-              </item>
-              <item row="1" column="1">
-               <widget class="QLabel" name="label_2">
-                <property name="styleSheet">
-                 <string notr="true">color: #212121;
-</string>
-                </property>
-                <property name="text">
-                 <string/>
-                </property>
-               </widget>
-              </item>
-              <item row="2" column="0">
-               <widget class="QLabel" name="beginnigIntLabel_2">
-                <property name="sizePolicy">
-                 <sizepolicy hsizetype="Preferred" vsizetype="Maximum">
-                  <horstretch>0</horstretch>
-                  <verstretch>0</verstretch>
-                 </sizepolicy>
-                </property>
-                <property name="minimumSize">
-                 <size>
-                  <width>0</width>
-                  <height>50</height>
-                 </size>
-                </property>
-                <property name="font">
-                 <font>
-                  <pointsize>11</pointsize>
-                  <bold>false</bold>
-                 </font>
-                </property>
-                <property name="styleSheet">
-                 <string notr="true">color: #212121;
-</string>
-                </property>
-                <property name="text">
-                 <string>Лучшая ошибка</string>
-                </property>
-                <property name="alignment">
-                 <set>Qt::AlignmentFlag::AlignJustify|Qt::AlignmentFlag::AlignVCenter</set>
-                </property>
-               </widget>
-              </item>
-              <item row="2" column="1">
-               <widget class="QLabel" name="label_3">
-                <property name="styleSheet">
-                 <string notr="true">color: #212121;
-</string>
-                </property>
-                <property name="text">
-                 <string/>
-                </property>
-               </widget>
-              </item>
-             </layout>
-            </widget>
             <widget class="QWidget" name="layoutWidget">
              <property name="geometry">
               <rect>
@@ -1834,7 +1720,7 @@ QPushButton:pressed {
                </widget>
               </item>
               <item>
-               <widget class="QPushButton" name="loadButton_2">
+               <widget class="QPushButton" name="inEndButton">
                 <property name="sizePolicy">
                  <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
                   <horstretch>0</horstretch>
@@ -1873,11 +1759,188 @@ QPushButton:pressed {
               </item>
              </layout>
             </widget>
+            <widget class="QWidget" name="errorPlotContainer" native="true">
+             <property name="geometry">
+              <rect>
+               <x>220</x>
+               <y>20</y>
+               <width>521</width>
+               <height>251</height>
+              </rect>
+             </property>
+            </widget>
+            <widget class="QFrame" name="frame">
+             <property name="geometry">
+              <rect>
+               <x>9</x>
+               <y>19</y>
+               <width>201</width>
+               <height>251</height>
+              </rect>
+             </property>
+             <property name="frameShape">
+              <enum>QFrame::Shape::StyledPanel</enum>
+             </property>
+             <property name="frameShadow">
+              <enum>QFrame::Shadow::Raised</enum>
+             </property>
+             <widget class="QWidget" name="layoutWidget">
+              <property name="geometry">
+               <rect>
+                <x>10</x>
+                <y>0</y>
+                <width>191</width>
+                <height>164</height>
+               </rect>
+              </property>
+              <layout class="QGridLayout" name="gridLayout_3">
+               <item row="0" column="0">
+                <widget class="QLabel" name="degLabel_1">
+                 <property name="sizePolicy">
+                  <sizepolicy hsizetype="Preferred" vsizetype="Maximum">
+                   <horstretch>0</horstretch>
+                   <verstretch>0</verstretch>
+                  </sizepolicy>
+                 </property>
+                 <property name="minimumSize">
+                  <size>
+                   <width>0</width>
+                   <height>50</height>
+                  </size>
+                 </property>
+                 <property name="font">
+                  <font>
+                   <pointsize>11</pointsize>
+                   <bold>false</bold>
+                  </font>
+                 </property>
+                 <property name="styleSheet">
+                  <string notr="true">color: #212121;
+</string>
+                 </property>
+                 <property name="text">
+                  <string>Информация:</string>
+                 </property>
+                 <property name="alignment">
+                  <set>Qt::AlignmentFlag::AlignJustify|Qt::AlignmentFlag::AlignVCenter</set>
+                 </property>
+                </widget>
+               </item>
+               <item row="0" column="1">
+                <widget class="QLabel" name="label">
+                 <property name="styleSheet">
+                  <string notr="true">color: #212121;
+</string>
+                 </property>
+                 <property name="text">
+                  <string/>
+                 </property>
+                </widget>
+               </item>
+               <item row="1" column="0">
+                <widget class="QLabel" name="coefLabel_2">
+                 <property name="sizePolicy">
+                  <sizepolicy hsizetype="Preferred" vsizetype="Maximum">
+                   <horstretch>0</horstretch>
+                   <verstretch>0</verstretch>
+                  </sizepolicy>
+                 </property>
+                 <property name="minimumSize">
+                  <size>
+                   <width>0</width>
+                   <height>50</height>
+                  </size>
+                 </property>
+                 <property name="font">
+                  <font>
+                   <pointsize>11</pointsize>
+                   <bold>false</bold>
+                  </font>
+                 </property>
+                 <property name="styleSheet">
+                  <string notr="true">color: #212121;
+</string>
+                 </property>
+                 <property name="text">
+                  <string>Поколение</string>
+                 </property>
+                 <property name="alignment">
+                  <set>Qt::AlignmentFlag::AlignJustify|Qt::AlignmentFlag::AlignVCenter</set>
+                 </property>
+                </widget>
+               </item>
+               <item row="1" column="1">
+                <widget class="QLabel" name="label_2">
+                 <property name="styleSheet">
+                  <string notr="true">color: #212121;
+</string>
+                 </property>
+                 <property name="text">
+                  <string/>
+                 </property>
+                </widget>
+               </item>
+               <item row="2" column="0">
+                <widget class="QLabel" name="beginnigIntLabel_2">
+                 <property name="sizePolicy">
+                  <sizepolicy hsizetype="Preferred" vsizetype="Maximum">
+                   <horstretch>0</horstretch>
+                   <verstretch>0</verstretch>
+                  </sizepolicy>
+                 </property>
+                 <property name="minimumSize">
+                  <size>
+                   <width>0</width>
+                   <height>50</height>
+                  </size>
+                 </property>
+                 <property name="font">
+                  <font>
+                   <pointsize>11</pointsize>
+                   <bold>false</bold>
+                  </font>
+                 </property>
+                 <property name="styleSheet">
+                  <string notr="true">color: #212121;
+</string>
+                 </property>
+                 <property name="text">
+                  <string>Лучшая ошибка</string>
+                 </property>
+                 <property name="alignment">
+                  <set>Qt::AlignmentFlag::AlignJustify|Qt::AlignmentFlag::AlignVCenter</set>
+                 </property>
+                </widget>
+               </item>
+               <item row="2" column="1">
+                <widget class="QLabel" name="label_3">
+                 <property name="styleSheet">
+                  <string notr="true">color: #212121;
+</string>
+                 </property>
+                 <property name="text">
+                  <string/>
+                 </property>
+                </widget>
+               </item>
+              </layout>
+             </widget>
+            </widget>
            </widget>
            <widget class="QWidget" name="tab_2">
             <attribute name="title">
              <string>Tab 2</string>
             </attribute>
+            <widget class="QWidget" name="functionPlotContainer" native="true">
+             <property name="geometry">
+              <rect>
+               <x>9</x>
+               <y>9</y>
+               <width>761</width>
+               <height>331</height>
+              </rect>
+             </property>
+            </widget>
            </widget>
           </widget>
          </item>

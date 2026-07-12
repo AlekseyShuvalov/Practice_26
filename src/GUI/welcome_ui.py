@@ -220,7 +220,7 @@ class Ui_MainWindow(object):
         self.descriptionParamLabel_2.setStyleSheet(u"color: #212121;\n"
 "")
         self.descriptionParamLabel_2.setAlignment(Qt.AlignmentFlag.AlignJustify|Qt.AlignmentFlag.AlignVCenter)
-        self.descriptionParamLabel_2.setMargin(0)
+        self.descriptionParamLabel_2.setMargin(10)
 
         self.verticalLayout_7.addWidget(self.descriptionParamLabel_2)
 
@@ -309,7 +309,7 @@ class Ui_MainWindow(object):
         self.descriptionParamLabel.setStyleSheet(u"color: #212121;\n"
 "")
         self.descriptionParamLabel.setAlignment(Qt.AlignmentFlag.AlignJustify|Qt.AlignmentFlag.AlignVCenter)
-        self.descriptionParamLabel.setMargin(11)
+        self.descriptionParamLabel.setMargin(0)
 
         self.verticalLayout_3.addWidget(self.descriptionParamLabel)
 
@@ -561,13 +561,13 @@ class Ui_MainWindow(object):
 "}")
         self.paramCard.setFrameShape(QFrame.Shape.StyledPanel)
         self.paramCard.setFrameShadow(QFrame.Shadow.Raised)
-        self.widget = QWidget(self.paramCard)
-        self.widget.setObjectName(u"widget")
-        self.widget.setGeometry(QRect(1, 10, 801, 591))
-        self.verticalLayout_2 = QVBoxLayout(self.widget)
+        self.layoutWidget1 = QWidget(self.paramCard)
+        self.layoutWidget1.setObjectName(u"layoutWidget1")
+        self.layoutWidget1.setGeometry(QRect(1, 10, 801, 591))
+        self.verticalLayout_2 = QVBoxLayout(self.layoutWidget1)
         self.verticalLayout_2.setObjectName(u"verticalLayout_2")
         self.verticalLayout_2.setContentsMargins(0, 0, 0, 0)
-        self.descriptionParamLabel_4 = QLabel(self.widget)
+        self.descriptionParamLabel_4 = QLabel(self.layoutWidget1)
         self.descriptionParamLabel_4.setObjectName(u"descriptionParamLabel_4")
         sizePolicy2.setHeightForWidth(self.descriptionParamLabel_4.sizePolicy().hasHeightForWidth())
         self.descriptionParamLabel_4.setSizePolicy(sizePolicy2)
@@ -584,7 +584,7 @@ class Ui_MainWindow(object):
         self.gridLayout_4.setSpacing(0)
         self.gridLayout_4.setObjectName(u"gridLayout_4")
         self.gridLayout_4.setContentsMargins(11, -1, 11, -1)
-        self.crossoverLabel = QLabel(self.widget)
+        self.crossoverLabel = QLabel(self.layoutWidget1)
         self.crossoverLabel.setObjectName(u"crossoverLabel")
         sizePolicy1.setHeightForWidth(self.crossoverLabel.sizePolicy().hasHeightForWidth())
         self.crossoverLabel.setSizePolicy(sizePolicy1)
@@ -596,7 +596,7 @@ class Ui_MainWindow(object):
 
         self.gridLayout_4.addWidget(self.crossoverLabel, 4, 0, 1, 1)
 
-        self.mutatinoLabel = QLabel(self.widget)
+        self.mutatinoLabel = QLabel(self.layoutWidget1)
         self.mutatinoLabel.setObjectName(u"mutatinoLabel")
         sizePolicy1.setHeightForWidth(self.mutatinoLabel.sizePolicy().hasHeightForWidth())
         self.mutatinoLabel.setSizePolicy(sizePolicy1)
@@ -608,7 +608,7 @@ class Ui_MainWindow(object):
 
         self.gridLayout_4.addWidget(self.mutatinoLabel, 2, 0, 1, 1)
 
-        self.numPopulSpinBox = QSpinBox(self.widget)
+        self.numPopulSpinBox = QSpinBox(self.layoutWidget1)
         self.numPopulSpinBox.setObjectName(u"numPopulSpinBox")
         self.numPopulSpinBox.setFont(font4)
         self.numPopulSpinBox.setStyleSheet(u"QSpinBox, QDoubleSpinBox {\n"
@@ -627,7 +627,7 @@ class Ui_MainWindow(object):
 
         self.gridLayout_4.addWidget(self.numPopulSpinBox, 1, 1, 1, 1)
 
-        self.numPopulLabel = QLabel(self.widget)
+        self.numPopulLabel = QLabel(self.layoutWidget1)
         self.numPopulLabel.setObjectName(u"numPopulLabel")
         sizePolicy1.setHeightForWidth(self.numPopulLabel.sizePolicy().hasHeightForWidth())
         self.numPopulLabel.setSizePolicy(sizePolicy1)
@@ -639,7 +639,7 @@ class Ui_MainWindow(object):
 
         self.gridLayout_4.addWidget(self.numPopulLabel, 1, 0, 1, 1)
 
-        self.sizePopulSpinBox = QSpinBox(self.widget)
+        self.sizePopulSpinBox = QSpinBox(self.layoutWidget1)
         self.sizePopulSpinBox.setObjectName(u"sizePopulSpinBox")
         self.sizePopulSpinBox.setFont(font4)
         self.sizePopulSpinBox.setStyleSheet(u"QSpinBox, QDoubleSpinBox {\n"
@@ -658,7 +658,7 @@ class Ui_MainWindow(object):
 
         self.gridLayout_4.addWidget(self.sizePopulSpinBox, 0, 1, 1, 1)
 
-        self.crossoverDoubleSpinBox = QDoubleSpinBox(self.widget)
+        self.crossoverDoubleSpinBox = QDoubleSpinBox(self.layoutWidget1)
         self.crossoverDoubleSpinBox.setObjectName(u"crossoverDoubleSpinBox")
         self.crossoverDoubleSpinBox.setFont(font2)
         self.crossoverDoubleSpinBox.setStyleSheet(u"QSpinBox, QDoubleSpinBox {\n"
@@ -677,7 +677,7 @@ class Ui_MainWindow(object):
 
         self.gridLayout_4.addWidget(self.crossoverDoubleSpinBox, 4, 1, 1, 1)
 
-        self.mutationsDoubleSpinBox = QDoubleSpinBox(self.widget)
+        self.mutationsDoubleSpinBox = QDoubleSpinBox(self.layoutWidget1)
         self.mutationsDoubleSpinBox.setObjectName(u"mutationsDoubleSpinBox")
         self.mutationsDoubleSpinBox.setFont(font2)
         self.mutationsDoubleSpinBox.setStyleSheet(u"QSpinBox, QDoubleSpinBox {\n"
@@ -696,7 +696,7 @@ class Ui_MainWindow(object):
 
         self.gridLayout_4.addWidget(self.mutationsDoubleSpinBox, 2, 1, 1, 1)
 
-        self.sizePopulLabel = QLabel(self.widget)
+        self.sizePopulLabel = QLabel(self.layoutWidget1)
         self.sizePopulLabel.setObjectName(u"sizePopulLabel")
         sizePolicy1.setHeightForWidth(self.sizePopulLabel.sizePolicy().hasHeightForWidth())
         self.sizePopulLabel.setSizePolicy(sizePolicy1)
@@ -719,7 +719,7 @@ class Ui_MainWindow(object):
         self.horizontalLayout_2.setSpacing(150)
         self.horizontalLayout_2.setObjectName(u"horizontalLayout_2")
         self.horizontalLayout_2.setContentsMargins(-1, 0, 0, 21)
-        self.backButton_4 = QPushButton(self.widget)
+        self.backButton_4 = QPushButton(self.layoutWidget1)
         self.backButton_4.setObjectName(u"backButton_4")
         self.backButton_4.setEnabled(True)
         sizePolicy2.setHeightForWidth(self.backButton_4.sizePolicy().hasHeightForWidth())
@@ -745,7 +745,7 @@ class Ui_MainWindow(object):
 
         self.horizontalLayout_2.addWidget(self.backButton_4)
 
-        self.nextButton_3 = QPushButton(self.widget)
+        self.nextButton_3 = QPushButton(self.layoutWidget1)
         self.nextButton_3.setObjectName(u"nextButton_3")
         sizePolicy2.setHeightForWidth(self.nextButton_3.sizePolicy().hasHeightForWidth())
         self.nextButton_3.setSizePolicy(sizePolicy2)
@@ -806,85 +806,46 @@ class Ui_MainWindow(object):
         sizePolicy2.setHeightForWidth(self.tabWidget.sizePolicy().hasHeightForWidth())
         self.tabWidget.setSizePolicy(sizePolicy2)
         self.tabWidget.setMinimumSize(QSize(783, 400))
-        self.tabWidget.setStyleSheet(u"background-color: #FFFFFF;\n"
-"border: 1px solid #E0E0E0;\n"
-"")
+        self.tabWidget.setStyleSheet(u"QTabWidget::pane {\n"
+"    border: 1px solid #CCCCCC;\n"
+"    background-color: #FFFFFF;\n"
+"    border-radius: 4px;\n"
+"}\n"
+"\n"
+"QTabBar::tab {\n"
+"    background-color: #EAEAEA;\n"
+"    color: #212121;\n"
+"    border: 1px solid #CCCCCC;\n"
+"    border-top-left-radius: 6px;\n"
+"    border-top-right-radius: 6px;\n"
+"    padding: 8px 20px;\n"
+"    font-family: \"Segoe UI\", sans-serif;\n"
+"    font-size: 11pt;\n"
+"}\n"
+"\n"
+"QTabBar::tab:hover {\n"
+"    background-color: rgb(206, 255, 232); \n"
+"    color: rgb(38, 162, 105);\n"
+"}\n"
+"\n"
+"QTabBar::tab:selected {\n"
+"    background-color: #FFFFFF;\n"
+"    color: rgb(38, 162, 105); \n"
+"    border-top: 3px solid rgb(38, 162, 105); \n"
+"    border-left: 1px solid #CCCCCC;\n"
+"    border-right: 1px solid #CCCCCC;\n"
+"    padding-bottom: 9px;\n"
+"}")
         self.tab = QWidget()
         self.tab.setObjectName(u"tab")
-        self.widget1 = QWidget(self.tab)
-        self.widget1.setObjectName(u"widget1")
-        self.widget1.setGeometry(QRect(10, 10, 197, 164))
-        self.gridLayout_3 = QGridLayout(self.widget1)
-        self.gridLayout_3.setObjectName(u"gridLayout_3")
-        self.gridLayout_3.setContentsMargins(0, 0, 0, 0)
-        self.degLabel_1 = QLabel(self.widget1)
-        self.degLabel_1.setObjectName(u"degLabel_1")
-        sizePolicy1.setHeightForWidth(self.degLabel_1.sizePolicy().hasHeightForWidth())
-        self.degLabel_1.setSizePolicy(sizePolicy1)
-        self.degLabel_1.setMinimumSize(QSize(0, 50))
-        font5 = QFont()
-        font5.setPointSize(11)
-        font5.setBold(False)
-        self.degLabel_1.setFont(font5)
-        self.degLabel_1.setStyleSheet(u"color: #212121;\n"
-"")
-        self.degLabel_1.setAlignment(Qt.AlignmentFlag.AlignJustify|Qt.AlignmentFlag.AlignVCenter)
-
-        self.gridLayout_3.addWidget(self.degLabel_1, 0, 0, 1, 1)
-
-        self.label = QLabel(self.widget1)
-        self.label.setObjectName(u"label")
-        self.label.setStyleSheet(u"color: #212121;\n"
-"")
-
-        self.gridLayout_3.addWidget(self.label, 0, 1, 1, 1)
-
-        self.coefLabel_2 = QLabel(self.widget1)
-        self.coefLabel_2.setObjectName(u"coefLabel_2")
-        sizePolicy1.setHeightForWidth(self.coefLabel_2.sizePolicy().hasHeightForWidth())
-        self.coefLabel_2.setSizePolicy(sizePolicy1)
-        self.coefLabel_2.setMinimumSize(QSize(0, 50))
-        self.coefLabel_2.setFont(font5)
-        self.coefLabel_2.setStyleSheet(u"color: #212121;\n"
-"")
-        self.coefLabel_2.setAlignment(Qt.AlignmentFlag.AlignJustify|Qt.AlignmentFlag.AlignVCenter)
-
-        self.gridLayout_3.addWidget(self.coefLabel_2, 1, 0, 1, 1)
-
-        self.label_2 = QLabel(self.widget1)
-        self.label_2.setObjectName(u"label_2")
-        self.label_2.setStyleSheet(u"color: #212121;\n"
-"")
-
-        self.gridLayout_3.addWidget(self.label_2, 1, 1, 1, 1)
-
-        self.beginnigIntLabel_2 = QLabel(self.widget1)
-        self.beginnigIntLabel_2.setObjectName(u"beginnigIntLabel_2")
-        sizePolicy1.setHeightForWidth(self.beginnigIntLabel_2.sizePolicy().hasHeightForWidth())
-        self.beginnigIntLabel_2.setSizePolicy(sizePolicy1)
-        self.beginnigIntLabel_2.setMinimumSize(QSize(0, 50))
-        self.beginnigIntLabel_2.setFont(font5)
-        self.beginnigIntLabel_2.setStyleSheet(u"color: #212121;\n"
-"")
-        self.beginnigIntLabel_2.setAlignment(Qt.AlignmentFlag.AlignJustify|Qt.AlignmentFlag.AlignVCenter)
-
-        self.gridLayout_3.addWidget(self.beginnigIntLabel_2, 2, 0, 1, 1)
-
-        self.label_3 = QLabel(self.widget1)
-        self.label_3.setObjectName(u"label_3")
-        self.label_3.setStyleSheet(u"color: #212121;\n"
-"")
-
-        self.gridLayout_3.addWidget(self.label_3, 2, 1, 1, 1)
-
-        self.widget2 = QWidget(self.tab)
-        self.widget2.setObjectName(u"widget2")
-        self.widget2.setGeometry(QRect(0, 290, 771, 71))
-        self.horizontalLayout_6 = QHBoxLayout(self.widget2)
+        self.layoutWidget2 = QWidget(self.tab)
+        self.layoutWidget2.setObjectName(u"layoutWidget2")
+        self.layoutWidget2.setGeometry(QRect(0, 290, 771, 71))
+        self.horizontalLayout_6 = QHBoxLayout(self.layoutWidget2)
         self.horizontalLayout_6.setSpacing(56)
         self.horizontalLayout_6.setObjectName(u"horizontalLayout_6")
         self.horizontalLayout_6.setContentsMargins(0, 0, 0, 0)
-        self.backButton_5 = QPushButton(self.widget2)
+        self.backButton_5 = QPushButton(self.layoutWidget2)
         self.backButton_5.setObjectName(u"backButton_5")
         self.backButton_5.setEnabled(True)
         sizePolicy2.setHeightForWidth(self.backButton_5.sizePolicy().hasHeightForWidth())
@@ -910,7 +871,7 @@ class Ui_MainWindow(object):
 
         self.horizontalLayout_6.addWidget(self.backButton_5)
 
-        self.nextButton_4 = QPushButton(self.widget2)
+        self.nextButton_4 = QPushButton(self.layoutWidget2)
         self.nextButton_4.setObjectName(u"nextButton_4")
         sizePolicy2.setHeightForWidth(self.nextButton_4.sizePolicy().hasHeightForWidth())
         self.nextButton_4.setSizePolicy(sizePolicy2)
@@ -935,12 +896,12 @@ class Ui_MainWindow(object):
 
         self.horizontalLayout_6.addWidget(self.nextButton_4)
 
-        self.loadButton_2 = QPushButton(self.widget2)
-        self.loadButton_2.setObjectName(u"loadButton_2")
-        sizePolicy2.setHeightForWidth(self.loadButton_2.sizePolicy().hasHeightForWidth())
-        self.loadButton_2.setSizePolicy(sizePolicy2)
-        self.loadButton_2.setMinimumSize(QSize(170, 50))
-        self.loadButton_2.setStyleSheet(u"QPushButton {\n"
+        self.inEndButton = QPushButton(self.layoutWidget2)
+        self.inEndButton.setObjectName(u"inEndButton")
+        sizePolicy2.setHeightForWidth(self.inEndButton.sizePolicy().hasHeightForWidth())
+        self.inEndButton.setSizePolicy(sizePolicy2)
+        self.inEndButton.setMinimumSize(QSize(170, 50))
+        self.inEndButton.setStyleSheet(u"QPushButton {\n"
 "    background-color: #FFFFFF;\n"
 "    border: 1px solid #0078D7;\n"
 "    border-radius: 8px;\n"
@@ -958,11 +919,88 @@ class Ui_MainWindow(object):
 "    color: #FFFFFF;\n"
 "}")
 
-        self.horizontalLayout_6.addWidget(self.loadButton_2)
+        self.horizontalLayout_6.addWidget(self.inEndButton)
+
+        self.errorPlotContainer = QWidget(self.tab)
+        self.errorPlotContainer.setObjectName(u"errorPlotContainer")
+        self.errorPlotContainer.setGeometry(QRect(220, 20, 521, 251))
+        self.frame = QFrame(self.tab)
+        self.frame.setObjectName(u"frame")
+        self.frame.setGeometry(QRect(9, 19, 201, 251))
+        self.frame.setFrameShape(QFrame.Shape.StyledPanel)
+        self.frame.setFrameShadow(QFrame.Shadow.Raised)
+        self.layoutWidget3 = QWidget(self.frame)
+        self.layoutWidget3.setObjectName(u"layoutWidget3")
+        self.layoutWidget3.setGeometry(QRect(10, 0, 191, 164))
+        self.gridLayout_3 = QGridLayout(self.layoutWidget3)
+        self.gridLayout_3.setObjectName(u"gridLayout_3")
+        self.gridLayout_3.setContentsMargins(0, 0, 0, 0)
+        self.degLabel_1 = QLabel(self.layoutWidget3)
+        self.degLabel_1.setObjectName(u"degLabel_1")
+        sizePolicy1.setHeightForWidth(self.degLabel_1.sizePolicy().hasHeightForWidth())
+        self.degLabel_1.setSizePolicy(sizePolicy1)
+        self.degLabel_1.setMinimumSize(QSize(0, 50))
+        font5 = QFont()
+        font5.setPointSize(11)
+        font5.setBold(False)
+        self.degLabel_1.setFont(font5)
+        self.degLabel_1.setStyleSheet(u"color: #212121;\n"
+"")
+        self.degLabel_1.setAlignment(Qt.AlignmentFlag.AlignJustify|Qt.AlignmentFlag.AlignVCenter)
+
+        self.gridLayout_3.addWidget(self.degLabel_1, 0, 0, 1, 1)
+
+        self.label = QLabel(self.layoutWidget3)
+        self.label.setObjectName(u"label")
+        self.label.setStyleSheet(u"color: #212121;\n"
+"")
+
+        self.gridLayout_3.addWidget(self.label, 0, 1, 1, 1)
+
+        self.coefLabel_2 = QLabel(self.layoutWidget3)
+        self.coefLabel_2.setObjectName(u"coefLabel_2")
+        sizePolicy1.setHeightForWidth(self.coefLabel_2.sizePolicy().hasHeightForWidth())
+        self.coefLabel_2.setSizePolicy(sizePolicy1)
+        self.coefLabel_2.setMinimumSize(QSize(0, 50))
+        self.coefLabel_2.setFont(font5)
+        self.coefLabel_2.setStyleSheet(u"color: #212121;\n"
+"")
+        self.coefLabel_2.setAlignment(Qt.AlignmentFlag.AlignJustify|Qt.AlignmentFlag.AlignVCenter)
+
+        self.gridLayout_3.addWidget(self.coefLabel_2, 1, 0, 1, 1)
+
+        self.label_2 = QLabel(self.layoutWidget3)
+        self.label_2.setObjectName(u"label_2")
+        self.label_2.setStyleSheet(u"color: #212121;\n"
+"")
+
+        self.gridLayout_3.addWidget(self.label_2, 1, 1, 1, 1)
+
+        self.beginnigIntLabel_2 = QLabel(self.layoutWidget3)
+        self.beginnigIntLabel_2.setObjectName(u"beginnigIntLabel_2")
+        sizePolicy1.setHeightForWidth(self.beginnigIntLabel_2.sizePolicy().hasHeightForWidth())
+        self.beginnigIntLabel_2.setSizePolicy(sizePolicy1)
+        self.beginnigIntLabel_2.setMinimumSize(QSize(0, 50))
+        self.beginnigIntLabel_2.setFont(font5)
+        self.beginnigIntLabel_2.setStyleSheet(u"color: #212121;\n"
+"")
+        self.beginnigIntLabel_2.setAlignment(Qt.AlignmentFlag.AlignJustify|Qt.AlignmentFlag.AlignVCenter)
+
+        self.gridLayout_3.addWidget(self.beginnigIntLabel_2, 2, 0, 1, 1)
+
+        self.label_3 = QLabel(self.layoutWidget3)
+        self.label_3.setObjectName(u"label_3")
+        self.label_3.setStyleSheet(u"color: #212121;\n"
+"")
+
+        self.gridLayout_3.addWidget(self.label_3, 2, 1, 1, 1)
 
         self.tabWidget.addTab(self.tab, "")
         self.tab_2 = QWidget()
         self.tab_2.setObjectName(u"tab_2")
+        self.functionPlotContainer = QWidget(self.tab_2)
+        self.functionPlotContainer.setObjectName(u"functionPlotContainer")
+        self.functionPlotContainer.setGeometry(QRect(9, 9, 761, 331))
         self.tabWidget.addTab(self.tab_2, "")
 
         self.verticalLayout_6.addWidget(self.tabWidget)
@@ -1037,7 +1075,7 @@ class Ui_MainWindow(object):
 
         self.retranslateUi(MainWindow)
 
-        self.stackedWidget.setCurrentIndex(1)
+        self.stackedWidget.setCurrentIndex(4)
         self.tabWidget.setCurrentIndex(0)
 
 
@@ -1085,15 +1123,15 @@ class Ui_MainWindow(object):
         self.backButton_4.setText(QCoreApplication.translate("MainWindow", u"\u041d\u0430\u0437\u0430\u0434", None))
         self.nextButton_3.setText(QCoreApplication.translate("MainWindow", u"\u0412\u043f\u0435\u0440\u0435\u0434", None))
         self.descriptionParamLabel_3.setText(QCoreApplication.translate("MainWindow", u"\u0412\u044b\u043f\u043e\u043d\u0435\u043d\u0438\u0435 \u0430\u043b\u0433\u043e\u0440\u0438\u0442\u043c\u0430", None))
+        self.backButton_5.setText(QCoreApplication.translate("MainWindow", u"\u041d\u0430\u0437\u0430\u0434", None))
+        self.nextButton_4.setText(QCoreApplication.translate("MainWindow", u"\u0412\u043f\u0435\u0440\u0435\u0434", None))
+        self.inEndButton.setText(QCoreApplication.translate("MainWindow", u"\u0412 \u043a\u043e\u043d\u0435\u0446", None))
         self.degLabel_1.setText(QCoreApplication.translate("MainWindow", u"\u0418\u043d\u0444\u043e\u0440\u043c\u0430\u0446\u0438\u044f:", None))
         self.label.setText("")
         self.coefLabel_2.setText(QCoreApplication.translate("MainWindow", u"\u041f\u043e\u043a\u043e\u043b\u0435\u043d\u0438\u0435", None))
         self.label_2.setText("")
         self.beginnigIntLabel_2.setText(QCoreApplication.translate("MainWindow", u"\u041b\u0443\u0447\u0448\u0430\u044f \u043e\u0448\u0438\u0431\u043a\u0430", None))
         self.label_3.setText("")
-        self.backButton_5.setText(QCoreApplication.translate("MainWindow", u"\u041d\u0430\u0437\u0430\u0434", None))
-        self.nextButton_4.setText(QCoreApplication.translate("MainWindow", u"\u0412\u043f\u0435\u0440\u0435\u0434", None))
-        self.loadButton_2.setText(QCoreApplication.translate("MainWindow", u"\u0412 \u043a\u043e\u043d\u0435\u0446", None))
         self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab), QCoreApplication.translate("MainWindow", u"Tab 1", None))
         self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab_2), QCoreApplication.translate("MainWindow", u"Tab 2", None))
         self.backButton_3.setText(QCoreApplication.translate("MainWindow", u"\u041d\u0430\u0437\u0430\u0434", None))
