@@ -1,14 +1,13 @@
 import json
 import random
-from math_functions import Polynom
-from config import GAConfig
+from src.backend.math_functions import Polynom
+from src.backend.config import GAConfig
 
 
 class DataManager:
     def generate_random_polynom(self, max_degree=8):
         degree = random.randint(1, max_degree)
-        coefficients = [random.randint(-5, 5)
-                        for _ in range(degree + 1)]
+        coefficients = [round(random.uniform(-5, 5), 3) for _ in range(degree + 1)]
         return Polynom(coefficients)
 
     def generate_random_task(self):

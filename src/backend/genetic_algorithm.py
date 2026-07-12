@@ -1,5 +1,5 @@
 import random
-from math_functions import StepFunc
+from src.backend.math_functions import StepFunc
 
 class GeneticAlgorithm:
     def __init__(self, polynom, l, r, steps, config):

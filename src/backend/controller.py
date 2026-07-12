@@ -1,24 +1,21 @@
-import sys
-from PySide6.QtWidgets import QApplication, QMainWindow, QMessageBox, QFileDialog
-from welcome_ui import Ui_MainWindow
-from data_manager import DataManager
-from config import GAConfig
-from math_functions import Polynom
-from genetic_algorithm import GeneticAlgorithm
-
+from PySide6.QtWidgets import QMessageBox, QFileDialog
+from src.GUI.welcome_ui import Ui_MainWindow
+from src.backend.data_manager import DataManager
+from src.backend.config import GAConfig
+from src.backend.math_functions import Polynom
+from src.backend.genetic_algorithm import GeneticAlgorithm
 
 class AppController:
-    def __init__(self):
+    def __init__(self, window):
+        self.window = window
+        self.ui = Ui_MainWindow()
+        self.ui.setupUi(self.window)
+        self.ui.stackedWidget.setCurrentIndex(0)
+
         self.data_manager = DataManager()
         self.ga_config = GAConfig()
         self.ga = None
         self.current_task = None
-
-        # Инициализация GUI
-        self.app = QApplication(sys.argv)
-        self.window = QMainWindow()
-        self.ui = Ui_MainWindow()
-        self.ui.setupUi(self.window)
 
         self.connect_signals()
 
@@ -69,9 +66,3 @@ class AppController:
 
     def run(self):
         self.window.show()
-        sys.exit(self.app.exec())
-
-
-if __name__ == "__main__":
-    controller = AppController()
-    controller.run()
