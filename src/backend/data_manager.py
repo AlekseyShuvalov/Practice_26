@@ -76,6 +76,12 @@ class DataManager:
         if len(data['polynom']) > 9:
             raise ValueError("Степень полинома не должна превышать 8")
 
+        for coef in data['polynom']:
+            if not isinstance(coef, (int, float)):
+                raise ValueError("Коэффициенты должны быть числами")
+            if not (-5 <= coef <= 5):
+                raise ValueError(f"Коэффициент {coef} должен быть в промежутке [-5; 5]")
+
         if not isinstance(data['interval'], list) or len(data['interval']) != 2:
             raise ValueError("'interval' должен быть списком из 2 элементов")
         if data['interval'][0] >= data['interval'][1]:
