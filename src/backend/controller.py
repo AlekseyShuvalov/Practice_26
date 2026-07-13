@@ -90,9 +90,6 @@ class AppController:
                     self.ui.mutationsDoubleSpinBox.setValue(config.mutation_chance)
                     self.ui.crossoverDoubleSpinBox.setValue(config.crossover_chance)
 
-                print(f"Загружена задача: {task_data}")
-                print(f"Параметры ГА: {self.ga_config}")
-
                 self.ui.stackedWidget.setCurrentIndex(3)
 
             except Exception as e:
@@ -100,7 +97,6 @@ class AppController:
 
     def on_random_generate(self):
         self.current_task = self.data_manager.generate_random_task()
-        print(f"Сгенерирована случайная задача: {self.current_task}")
 
         coefs = self.current_task['polynom']   # Поля ввода
         self.ui.degSpinBox.setValue(len(coefs) - 1)
@@ -156,7 +152,6 @@ class AppController:
                 'interval': [l, r],
                 'steps': steps
             }
-            print("Данные задачи приняты")
             self.ui.stackedWidget.setCurrentIndex(3)
 
         except ValueError:
@@ -170,8 +165,6 @@ class AppController:
         self.ga_config.crossover_chance = self.ui.crossoverDoubleSpinBox.value()
 
         self.ga_config.validate()
-
-        print(f"Параметры алгоритма: {self.ga_config}")
 
         self.run_algorithm()
 
