@@ -623,7 +623,7 @@ class Ui_MainWindow(object):
 "    border: 1px solid rgb(38, 162, 105);\n"
 "}")
         self.numPopulSpinBox.setMinimum(1)
-        self.numPopulSpinBox.setMaximum(5000)
+        self.numPopulSpinBox.setMaximum(1000)
 
         self.gridLayout_4.addWidget(self.numPopulSpinBox, 1, 1, 1, 1)
 
@@ -654,7 +654,7 @@ class Ui_MainWindow(object):
 "    border: 1px solid rgb(38, 162, 105);\n"
 "}")
         self.sizePopulSpinBox.setMinimum(10)
-        self.sizePopulSpinBox.setMaximum(1000)
+        self.sizePopulSpinBox.setMaximum(300)
 
         self.gridLayout_4.addWidget(self.sizePopulSpinBox, 0, 1, 1, 1)
 
@@ -942,16 +942,16 @@ class Ui_MainWindow(object):
 
         self.functionPlotContainer = QWidget(self.tab)
         self.functionPlotContainer.setObjectName(u"functionPlotContainer")
-        self.functionPlotContainer.setGeometry(QRect(220, 20, 521, 251))
+        self.functionPlotContainer.setGeometry(QRect(240, 20, 531, 251))
         self.frame = QFrame(self.tab)
         self.frame.setObjectName(u"frame")
-        self.frame.setGeometry(QRect(9, 19, 201, 251))
+        self.frame.setGeometry(QRect(9, 19, 221, 251))
         self.frame.setStyleSheet(u"background-color: rgb(224, 224, 224)")
         self.frame.setFrameShape(QFrame.Shape.StyledPanel)
         self.frame.setFrameShadow(QFrame.Shadow.Raised)
         self.layoutWidget3 = QWidget(self.frame)
         self.layoutWidget3.setObjectName(u"layoutWidget3")
-        self.layoutWidget3.setGeometry(QRect(0, 0, 201, 173))
+        self.layoutWidget3.setGeometry(QRect(0, 0, 220, 173))
         self.gridLayout_3 = QGridLayout(self.layoutWidget3)
         self.gridLayout_3.setObjectName(u"gridLayout_3")
         self.gridLayout_3.setContentsMargins(0, 0, 0, 0)
@@ -1003,7 +1003,10 @@ class Ui_MainWindow(object):
         sizePolicy1.setHeightForWidth(self.beginnigIntLabel_2.sizePolicy().hasHeightForWidth())
         self.beginnigIntLabel_2.setSizePolicy(sizePolicy1)
         self.beginnigIntLabel_2.setMinimumSize(QSize(0, 50))
-        self.beginnigIntLabel_2.setFont(font5)
+        font6 = QFont()
+        font6.setPointSize(9)
+        font6.setBold(False)
+        self.beginnigIntLabel_2.setFont(font6)
         self.beginnigIntLabel_2.setStyleSheet(u"color: #212121;\n"
 "")
         self.beginnigIntLabel_2.setAlignment(Qt.AlignmentFlag.AlignJustify|Qt.AlignmentFlag.AlignVCenter)
@@ -1041,7 +1044,7 @@ class Ui_MainWindow(object):
         self.tab_2.setObjectName(u"tab_2")
         self.errorPlotContainer = QWidget(self.tab_2)
         self.errorPlotContainer.setObjectName(u"errorPlotContainer")
-        self.errorPlotContainer.setGeometry(QRect(9, 9, 761, 331))
+        self.errorPlotContainer.setGeometry(QRect(10, 10, 751, 321))
         self.tabWidget.addTab(self.tab_2, "")
 
         self.verticalLayout_6.addWidget(self.tabWidget)
@@ -1147,10 +1150,10 @@ class Ui_MainWindow(object):
         self.degLabel_1.setText(QCoreApplication.translate("MainWindow", u"\u0418\u043d\u0444\u043e\u0440\u043c\u0430\u0446\u0438\u044f", None))
         self.generationNum.setText("")
         self.bestMistake.setText("")
-        self.beginnigIntLabel_2.setText(QCoreApplication.translate("MainWindow", u"\u041b\u0443\u0447\u0448\u0430\u044f \u043e\u0448\u0438\u0431\u043a\u0430:", None))
+        self.beginnigIntLabel_2.setText(QCoreApplication.translate("MainWindow", u"\u041b\u0443\u0447\u0448\u0430\u044f \u043f\u0440\u0438\u0441\u043f\u043e\u0441\u043e\u0431\u043b\u0435\u043d\u043d\u043e\u0441\u0442\u044c:", None))
         self.lineEdit_2.setText("")
         self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab), QCoreApplication.translate("MainWindow", u"\u041f\u0440\u0438\u0431\u043b\u0438\u0436\u0435\u043d\u0438\u0435", None))
-        self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab_2), QCoreApplication.translate("MainWindow", u"\u041e\u0448\u0438\u0431\u043a\u0430", None))
+        self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab_2), QCoreApplication.translate("MainWindow", u"\u041f\u0440\u0438\u0441\u043f\u043e\u0441\u043e\u0431\u043b\u0435\u043d\u043d\u043e\u0441\u0442\u044c", None))
         self.backButton_3.setText(QCoreApplication.translate("MainWindow", u"\u041d\u0430\u0437\u0430\u0434", None))
     # retranslateUi
 

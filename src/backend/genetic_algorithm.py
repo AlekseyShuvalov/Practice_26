@@ -88,14 +88,6 @@ class GeneticAlgorithm:
         self.save_generation_state(self.fitnesses)
         return True
 
-    def go_to_generation(self, generation_num):
-        if 0 <= generation_num < len(self.history):
-            self.curr_generation = generation_num
-            self.population = self.history[generation_num]["population"][:]
-            self.fitnesses = [self.calc_fitness(ind) for ind in self.population]
-            return True
-        return False
-
     def save_generation_state(self, fitnesses):
         state = {"generation": self.curr_generation, "population": [ind[:] for ind in self.population],
                  "best_genotype": None, "best_fitness": -100, "avg_fitness": -100}
@@ -104,7 +96,3 @@ class GeneticAlgorithm:
         state["best_fitness"] = fitnesses[max_fitness_id]
         state["avg_fitness"] = sum(fitnesses) / len(fitnesses)
         self.history.append(state)
-
-    def get_best_solution(self):
-        if not self.history: return None, -1
-        return self.history[-1]["best_genotype"], self.history[-1]["best_fitness"]

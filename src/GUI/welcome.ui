@@ -1243,7 +1243,7 @@ QSpinBox:focus, QDoubleSpinBox:focus {
                <number>1</number>
               </property>
               <property name="maximum">
-               <number>5000</number>
+               <number>1000</number>
               </property>
              </widget>
             </item>
@@ -1304,7 +1304,7 @@ QSpinBox:focus, QDoubleSpinBox:focus {
                <number>10</number>
               </property>
               <property name="maximum">
-               <number>1000</number>
+               <number>300</number>
               </property>
              </widget>
             </item>
@@ -1798,9 +1798,9 @@ QPushButton:pressed {
             <widget class="QWidget" name="functionPlotContainer" native="true">
              <property name="geometry">
               <rect>
-               <x>220</x>
+               <x>240</x>
                <y>20</y>
-               <width>521</width>
+               <width>531</width>
                <height>251</height>
               </rect>
              </property>
@@ -1810,7 +1810,7 @@ QPushButton:pressed {
               <rect>
                <x>9</x>
                <y>19</y>
-               <width>201</width>
+               <width>221</width>
                <height>251</height>
               </rect>
              </property>
@@ -1828,7 +1828,7 @@ QPushButton:pressed {
                <rect>
                 <x>0</x>
                 <y>0</y>
-                <width>201</width>
+                <width>220</width>
                 <height>173</height>
                </rect>
               </property>
@@ -1944,7 +1944,7 @@ QPushButton:pressed {
                  </property>
                  <property name="font">
                   <font>
-                   <pointsize>11</pointsize>
+                   <pointsize>9</pointsize>
                    <bold>false</bold>
                   </font>
                  </property>
@@ -1953,7 +1953,7 @@ QPushButton:pressed {
 </string>
                  </property>
                  <property name="text">
-                  <string>Лучшая ошибка:</string>
+                  <string>Лучшая приспособленность:</string>
                  </property>
                  <property name="alignment">
                   <set>Qt::AlignmentFlag::AlignJustify|Qt::AlignmentFlag::AlignVCenter</set>
@@ -2024,15 +2024,15 @@ QPushButton:pressed {
            </widget>
            <widget class="QWidget" name="tab_2">
             <attribute name="title">
-             <string>Ошибка</string>
+             <string>Приспособленность</string>
             </attribute>
             <widget class="QWidget" name="errorPlotContainer" native="true">
              <property name="geometry">
               <rect>
-               <x>9</x>
-               <y>9</y>
-               <width>761</width>
-               <height>331</height>
+               <x>10</x>
+               <y>10</y>
+               <width>751</width>
+               <height>321</height>
               </rect>
              </property>
             </widget>
