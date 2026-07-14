@@ -54,7 +54,7 @@
        <enum>Qt::LayoutDirection::LeftToRight</enum>
       </property>
       <property name="currentIndex">
-       <number>0</number>
+       <number>4</number>
       </property>
       <widget class="QWidget" name="welcomePage">
        <property name="minimumSize">
@@ -446,11 +446,11 @@ QPushButton:pressed {
 </string>
              </property>
              <property name="text">
-              <string>Условие задачи: 
+              <string>Условие задачи:
  Для заданного полинома f(x) (степень не больше 8) необходимо найти
  параметры ступенчатой функции g(x) (высота “ступеней”), которая приближает
  полиномиальную функцию, то есть минимизировать расстояние |f(x) - g(x)|
- между функциями на заданном интервале [l, r]. Количество ступеней 
+ между функциями на заданном интервале [l, r]. Количество ступеней
  вводятся пользователем.
 </string>
              </property>
@@ -471,7 +471,7 @@ QPushButton:pressed {
 </string>
              </property>
              <property name="text">
-              <string>Авторы: 
+              <string>Авторы:
  Гавриш Матвей - SuperNeonZ
  Трушкин Александр - Trushkin-Alexandr
  Шувалов Алексей - AlekseyShuvalov</string>
@@ -897,8 +897,8 @@ QSpinBox:focus, QDoubleSpinBox:focus {
                </property>
                <property name="styleSheet">
                 <string notr="true">QLineEdit {
-    background-color: #FFFFFF;    
-    border: 1px solid #DCDCDC; 
+    background-color: #FFFFFF;
+    border: 1px solid #DCDCDC;
     border-radius: 6px;
     color: #212121;
     padding: 6px 10px;
@@ -1243,7 +1243,7 @@ QSpinBox:focus, QDoubleSpinBox:focus {
                <number>1</number>
               </property>
               <property name="maximum">
-               <number>5000</number>
+               <number>1000</number>
               </property>
              </widget>
             </item>
@@ -1304,7 +1304,7 @@ QSpinBox:focus, QDoubleSpinBox:focus {
                <number>10</number>
               </property>
               <property name="maximum">
-               <number>1000</number>
+               <number>300</number>
               </property>
              </widget>
             </item>
@@ -1564,7 +1564,7 @@ QPushButton:pressed {
 </string>
            </property>
            <property name="text">
-            <string>Выпонение алгоритма</string>
+            <string>Выполнение алгоритма</string>
            </property>
            <property name="alignment">
             <set>Qt::AlignmentFlag::AlignJustify|Qt::AlignmentFlag::AlignVCenter</set>
@@ -1607,25 +1607,25 @@ QTabBar::tab {
 }
 
 QTabBar::tab:hover {
-    background-color: rgb(206, 255, 232); 
+    background-color: rgb(206, 255, 232);
     color: rgb(38, 162, 105);
 }
 
 QTabBar::tab:selected {
     background-color: #FFFFFF;
-    color: rgb(38, 162, 105); 
-    border-top: 3px solid rgb(38, 162, 105); 
+    color: rgb(38, 162, 105);
+    border-top: 3px solid rgb(38, 162, 105);
     border-left: 1px solid #CCCCCC;
     border-right: 1px solid #CCCCCC;
     padding-bottom: 9px;
 }</string>
            </property>
            <property name="currentIndex">
-            <number>1</number>
+            <number>0</number>
            </property>
            <widget class="QWidget" name="tab">
             <attribute name="title">
-             <string>Приблежение</string>
+             <string>Приближение</string>
             </attribute>
             <widget class="QWidget" name="layoutWidget">
              <property name="geometry">
@@ -1795,12 +1795,12 @@ QPushButton:pressed {
               </item>
              </layout>
             </widget>
-            <widget class="QWidget" name="errorPlotContainer" native="true">
+            <widget class="QWidget" name="functionPlotContainer" native="true">
              <property name="geometry">
               <rect>
-               <x>220</x>
+               <x>240</x>
                <y>20</y>
-               <width>521</width>
+               <width>531</width>
                <height>251</height>
               </rect>
              </property>
@@ -1810,9 +1810,12 @@ QPushButton:pressed {
               <rect>
                <x>9</x>
                <y>19</y>
-               <width>201</width>
+               <width>221</width>
                <height>251</height>
               </rect>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">background-color: rgb(224, 224, 224)</string>
              </property>
              <property name="frameShape">
               <enum>QFrame::Shape::StyledPanel</enum>
@@ -1825,7 +1828,7 @@ QPushButton:pressed {
                <rect>
                 <x>0</x>
                 <y>0</y>
-                <width>201</width>
+                <width>220</width>
                 <height>173</height>
                </rect>
               </property>
@@ -1941,7 +1944,7 @@ QPushButton:pressed {
                  </property>
                  <property name="font">
                   <font>
-                   <pointsize>11</pointsize>
+                   <pointsize>9</pointsize>
                    <bold>false</bold>
                   </font>
                  </property>
@@ -1950,7 +1953,7 @@ QPushButton:pressed {
 </string>
                  </property>
                  <property name="text">
-                  <string>Лучшая ошибка:</string>
+                  <string>Лучшая приспособленность:</string>
                  </property>
                  <property name="alignment">
                   <set>Qt::AlignmentFlag::AlignJustify|Qt::AlignmentFlag::AlignVCenter</set>
@@ -2021,15 +2024,15 @@ QPushButton:pressed {
            </widget>
            <widget class="QWidget" name="tab_2">
             <attribute name="title">
-             <string>Ошибка</string>
+             <string>Приспособленность</string>
             </attribute>
-            <widget class="QWidget" name="functionPlotContainer" native="true">
+            <widget class="QWidget" name="errorPlotContainer" native="true">
              <property name="geometry">
               <rect>
-               <x>9</x>
-               <y>9</y>
-               <width>761</width>
-               <height>331</height>
+               <x>10</x>
+               <y>10</y>
+               <width>751</width>
+               <height>321</height>
               </rect>
              </property>
             </widget>
@@ -2104,44 +2107,6 @@ QPushButton:pressed {
              </property>
              <property name="text">
               <string>Назад</string>
-             </property>
-            </widget>
-           </item>
-           <item>
-            <widget class="QPushButton" name="nextButton_2">
-             <property name="sizePolicy">
-              <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-               <horstretch>0</horstretch>
-               <verstretch>0</verstretch>
-              </sizepolicy>
-             </property>
-             <property name="minimumSize">
-              <size>
-               <width>250</width>
-               <height>50</height>
-              </size>
-             </property>
-             <property name="styleSheet">
-              <string notr="true">QPushButton {
-    background-color: #FFFFFF;
-    border: 1px solid rgb(38, 162, 105);
-    border-radius: 8px;
-    color: #212121;
-    font-family: &quot;Segoe UI&quot;;
-    font-size: 12pt;
-}
-QPushButton:hover {
-    background-color:rgb(206, 255, 232);
-    border: 1px solid rgb(38, 162, 105);
-    color: rgb(38, 162, 105);
-}
-QPushButton:pressed {
-    background-color: rgb(38, 162, 105);
-    color: #FFFFFF;
-}</string>
-             </property>
-             <property name="text">
-              <string>Вперед</string>
              </property>
             </widget>
            </item>

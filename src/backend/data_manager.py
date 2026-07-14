@@ -1,14 +1,13 @@
 import json
 import random
-from math_functions import Polynom
-from config import GAConfig
+from src.backend.math_functions import Polynom
+from src.backend.config import GAConfig
 
 
 class DataManager:
     def generate_random_polynom(self, max_degree=8):
         degree = random.randint(1, max_degree)
-        coefficients = [random.randint(-5, 5)
-                        for _ in range(degree + 1)]
+        coefficients = [round(random.uniform(-5, 5), 3) for _ in range(degree + 1)]
         return Polynom(coefficients)
 
     def generate_random_task(self):
@@ -32,9 +31,8 @@ class DataManager:
             data['ga_config'] = {
                 'population_size': config.population_size,
                 'generations': config.generations,
-                'tournament_size': config.tournament_size,
                 'mutation_chance': config.mutation_chance,
-                'crossover_rate': config.crossover_rate
+                'crossover_rate': config.crossover_chance
             }
 
         with open(filename, 'w', encoding='utf-8') as f:
@@ -57,9 +55,8 @@ class DataManager:
             config = GAConfig()
             config.population_size = data['ga_config']['population_size']
             config.generations = data['ga_config']['generations']
-            config.tournament_size = data['ga_config']['tournament_size']
             config.mutation_chance = data['ga_config']['mutation_chance']
-            config.crossover_rate = data['ga_config']['crossover_rate']
+            config.crossover_chance = data['ga_config']['crossover_chance']
             config.validate()
 
         return task_data, config
@@ -77,10 +74,20 @@ class DataManager:
         if len(data['polynom']) > 9:
             raise ValueError("Степень полинома не должна превышать 8")
 
+        for coef in data['polynom']:
+            if not isinstance(coef, (int, float)):
+                raise ValueError("Коэффициенты должны быть числами")
+            if not (-5 <= coef <= 5):
+                raise ValueError(f"Коэффициент {coef} должен быть в промежутке [-5; 5]")
+
         if not isinstance(data['interval'], list) or len(data['interval']) != 2:
             raise ValueError("'interval' должен быть списком из 2 элементов")
         if data['interval'][0] >= data['interval'][1]:
             raise ValueError("Начало интервала должно быть меньше конца")
+        if not (-10 <= data['interval'][0] <= 0 and 1 <= data['interval'][1] <= 10):
+            raise ValueError("Начало интервала должен лежать в промежутке [-10; 0], конец в [1; 10]")
 
         if not isinstance(data['steps'], int) or data['steps'] < 1:
             raise ValueError("'steps' должен быть положительным целым числом")
+        if not (10 <= data['steps'] <= 35):
+            raise ValueError("'steps' должен лежать в промежутке [10; 35]")
