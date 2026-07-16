@@ -308,6 +308,7 @@ class AppController:
         state = self.ga.history[-1]
         best_fitness = state['best_fitness']
         best_genotype = state['best_genotype']
+        best_genotype_rounded = [round(i, 3) for i in best_genotype]
         best_index = state['population'].index(best_genotype)
         if self.current_individual != best_index:
             self.current_individual = best_index
@@ -315,6 +316,7 @@ class AppController:
 
         message = ("Работа алгоритма завершена.\n"
                    f"Номер лучшего индивида: {best_index}\n"
+                   f"Список высот лучшего индивида: {best_genotype_rounded}\n"
                    f"Лучшая приспособленность: {round(best_fitness, 4)}\n")
 
         message_box = QMessageBox(self.window)
